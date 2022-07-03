@@ -9,17 +9,7 @@ button {
     border-radius: 8px;
     color: var(--c-white-10);
     display: flex;
+    height: 20px;
     outline: none;
-    padding: 16px 24px;
-}
-
-.search-button {
-    font-size: 24px;
-}
-
-.secondary-button {
-    background-color: transparent;
-    border: 1px solid var(--c-primary-60);
-    color: var(--c-primary-60);
-    padding: 15px 24px;
+    padding: 0px 8px;
 }
