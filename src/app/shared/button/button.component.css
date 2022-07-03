@@ -1,0 +1,23 @@
+:host {
+    display: block;
+}
+
+button {
+    background-color: var(--c-primary-60);
+    border: none;
+    border-radius: 8px;
+    color: var(--c-white-10);
+    display: flex;
+    outline: none;
+    padding: 16px 24px;
+}
+
+.search-button {
+    font-size: 24px;
+}
+
+.secondary-button {
+    background-color: transparent;
+    border: 1px solid var(--c-primary-60);
+    color: var(--c-primary-60);
+}

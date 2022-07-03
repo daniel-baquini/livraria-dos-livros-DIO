@@ -1,13 +1,16 @@
 import { BookPreviewComponent } from './book-preview/book-preview.component';
+import { ButtonComponent } from './button/button.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 @NgModule({
     declarations: [
-        BookPreviewComponent
+        BookPreviewComponent,
+        ButtonComponent
     ],
     exports: [
-        BookPreviewComponent
+        BookPreviewComponent,
+        ButtonComponent
     ],
     imports: [
         CommonModule

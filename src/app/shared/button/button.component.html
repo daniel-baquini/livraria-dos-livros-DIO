@@ -1,0 +1,11 @@
+<button *ngIf="this.type === 'primary'">
+    <span class="text-preset-420">{{this.label}}</span>
+</button>
+
+<button class="search-button" *ngIf="this.type === 'search'">
+    <span class="icon-search"></span>
+</button>
+
+<button class="secondary-button" *ngIf="this.type === 'secondary'">
+    <span class="text-preset-420">{{this.label}}</span>
+</button>

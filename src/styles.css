@@ -16,6 +16,10 @@
     --c-white-30: #ECECEC;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .text-preset-230 {
     font-size: 8px;
     font-weight: 600;
@@ -42,7 +46,7 @@
 
 .text-preset-420 {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 100%;
 }
 
