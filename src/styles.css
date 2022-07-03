@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url("./icons.css");
+
 :root {
     --c-dark-10: rgba(0, 0, 0, 0.1);
     --c-dark-60: rgba(0, 0, 0, 0.6);
