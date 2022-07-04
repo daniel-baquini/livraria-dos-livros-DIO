@@ -1,0 +1,8 @@
+<div class="label-wrapper" *ngIf="this.label !== ''">
+    <div class="label-wrapper__left-margin-label"></div>
+    <span class="label-wrapper__label text-preset-320">{{this.label}}</span>
+    <div class="label-wrapper__right-margin-label"></div>
+</div>
+<div class="input" [ngClass]="{ labeless: this.label === '' }">
+    <input class="field-input" type="text">
+</div>
