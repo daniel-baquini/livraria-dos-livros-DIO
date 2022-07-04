@@ -7,7 +7,11 @@ import { SharedModule } from '../shared/shared.module';
 const authenticationRoutes: Routes = [
     {
         component: LoginPageComponent,
-        path: ''
+        path: ""
+    },
+    {
+        component: CreateAccountComponent,
+        path: "create-account"
     }
 ]
 

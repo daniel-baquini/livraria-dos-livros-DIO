@@ -33,3 +33,12 @@ form {
     color: var(--c-primary-60);
     cursor: pointer;
 }
+
+.create-account {
+    color: var(--c-dark-60);
+}
+
+.create-account__create-one {
+    color: var(--c-primary-60);
+    cursor: pointer;
+}

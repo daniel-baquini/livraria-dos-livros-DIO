@@ -1,0 +1,25 @@
+:host {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    justify-content: center;
+    min-height: 100%;
+    padding: 24px;
+    width: 100%;
+}
+
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 376px;
+}
+
+.buttons-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
