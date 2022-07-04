@@ -9,6 +9,7 @@ import { LogoComponent } from './logo/logo.component';
 import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { SmallButtonComponent } from './small-button/small-button.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
     declarations: [
@@ -19,8 +20,9 @@ import { SmallButtonComponent } from './small-button/small-button.component';
         DefaultPageComponent,
         FieldComponent,
         LogoComponent,
+        ModalComponent,
         NavComponent,
-        SmallButtonComponent
+        SmallButtonComponent        
     ],
     exports: [
         AlertComponent,
@@ -30,6 +32,7 @@ import { SmallButtonComponent } from './small-button/small-button.component';
         DefaultPageComponent,
         FieldComponent,
         LogoComponent,
+        ModalComponent,
         NavComponent
     ],
     imports: [
