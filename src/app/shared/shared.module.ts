@@ -1,3 +1,4 @@
+import { AlertComponent } from './alert/alert.component';
 import { BookPreviewComponent } from './book-preview/book-preview.component';
 import { ButtonComponent } from './button/button.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
@@ -8,6 +9,7 @@ import { SmallButtonComponent } from './small-button/small-button.component';
 
 @NgModule({
     declarations: [
+        AlertComponent,
         BookPreviewComponent,
         ButtonComponent,
         CartItemComponent,
@@ -15,6 +17,7 @@ import { SmallButtonComponent } from './small-button/small-button.component';
         SmallButtonComponent
     ],
     exports: [
+        AlertComponent,
         BookPreviewComponent,
         ButtonComponent,
         CartItemComponent,
