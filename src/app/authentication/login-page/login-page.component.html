@@ -1,1 +1,12 @@
-<p>login-page works!</p>
+<app-logo></app-logo>
+<form [noValidate]>
+    <app-field [label]="'Email'"></app-field>
+    <app-field [label]="'Senha'"></app-field>
+    <div class="form-buttons">
+        <app-button [label]="'Entrar'"></app-button>
+        <div class="form-buttons__forgot-password">Esqueceu sua senha?</div>
+    </div>
+</form>
+<span class="create-account text-preset-450">
+    Não tem uma conta? <span class="create-account__create-one text-preset-470">Crie uma</span>
+</span>

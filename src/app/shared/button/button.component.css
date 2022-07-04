@@ -1,5 +1,5 @@
 :host {
-    display: contents;
+    display: inline-block;
 }
 
 button {
@@ -9,8 +9,10 @@ button {
     border-radius: 8px;
     color: var(--c-white-10);
     display: flex;
+    justify-content: center;
     outline: none;
     padding: 16px 24px;
+    width: 100%;
 }
 
 .search-button {
