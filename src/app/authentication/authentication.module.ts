@@ -1,4 +1,4 @@
-import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateAccountPageComponent } from './create-account-page/create-account-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,15 +10,15 @@ const authenticationRoutes: Routes = [
         path: ""
     },
     {
-        component: CreateAccountComponent,
+        component: CreateAccountPageComponent,
         path: "create-account"
     }
 ]
 
 @NgModule({
     declarations: [
-        LoginPageComponent,
-        CreateAccountComponent
+        CreateAccountPageComponent,
+        LoginPageComponent
     ],
     imports: [
         RouterModule.forChild(authenticationRoutes),
