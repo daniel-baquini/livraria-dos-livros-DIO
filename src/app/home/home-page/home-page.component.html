@@ -22,3 +22,10 @@
     </div>
     <span class="load-more text-preset-470">Carregar mais</span>
 </app-default-page>
+<app-modal
+    (closeButtonClick)="this.closeButtonClick()"
+    [closeButtonLabel]="'Entendido'"
+    [modalTextContent]="'Esse aplicativo é uma demo de um e-commerce de livros. Por ser uma demo, as compras não podem ser concluídas, mas, você pode adicionar itens ao carrinho, fornecer um endereço de entraga e escolher um método de pagamento.\n\nOs dados dos livros foram retirados da amazon no dia 03/07/2022'"
+    [modalTitle]="'Boas vindas!'"
+    *ngIf="this.showWelcomeModal"
+></app-modal>

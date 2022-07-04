@@ -1,15 +1,15 @@
-import { AlertComponent } from './alert/alert.component';
-import { BookPreviewComponent } from './book-preview/book-preview.component';
-import { ButtonComponent } from './button/button.component';
-import { CartItemComponent } from './cart-item/cart-item.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { BookPreviewComponent } from './components/book-preview/book-preview.component';
+import { ButtonComponent } from './components/button/button.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { CommonModule } from '@angular/common';
-import { DefaultPageComponent } from './default-page/default-page.component';
-import { FieldComponent } from './field/field.component';
-import { LogoComponent } from './logo/logo.component';
-import { NavComponent } from './nav/nav.component';
+import { DefaultPageComponent } from './components/default-page/default-page.component';
+import { FieldComponent } from './components/field/field.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { NavComponent } from './components/nav/nav.component';
 import { NgModule } from '@angular/core';
-import { SmallButtonComponent } from './small-button/small-button.component';
-import { ModalComponent } from './modal/modal.component';
+import { SmallButtonComponent } from './components/small-button/small-button.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +29,7 @@ import { ModalComponent } from './modal/modal.component';
         BookPreviewComponent,
         ButtonComponent,
         CartItemComponent,
+        CommonModule,
         DefaultPageComponent,
         FieldComponent,
         LogoComponent,
