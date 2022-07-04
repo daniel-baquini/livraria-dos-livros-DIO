@@ -4,6 +4,7 @@ import { ButtonComponent } from './button/button.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { CommonModule } from '@angular/common';
 import { LogoComponent } from './logo/logo.component';
+import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { SmallButtonComponent } from './small-button/small-button.component';
 
@@ -14,6 +15,7 @@ import { SmallButtonComponent } from './small-button/small-button.component';
         ButtonComponent,
         CartItemComponent,
         LogoComponent,
+        NavComponent,
         SmallButtonComponent
     ],
     exports: [
@@ -22,6 +24,7 @@ import { SmallButtonComponent } from './small-button/small-button.component';
         ButtonComponent,
         CartItemComponent,
         LogoComponent,
+        NavComponent,
         SmallButtonComponent
     ],
     imports: [
