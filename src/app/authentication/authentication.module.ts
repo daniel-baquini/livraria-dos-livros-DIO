@@ -13,7 +13,7 @@ const authenticationRoutes: Routes = [
         component: CreateAccountPageComponent,
         path: "create-account"
     }
-]
+];
 
 @NgModule({
     declarations: [

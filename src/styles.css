@@ -52,14 +52,18 @@
     box-sizing: border-box;
 }
 
-body, html {
+html {
     height: 100%;
     width: 100%;
 }
 
 body {
     background-color: var(--c-white-20);
+    display: flex;
     font-family: "Gothic A1";
+    justify-content: center;
+    min-height: 100%;
+    width: 100%;
 }
 
 app-root {
