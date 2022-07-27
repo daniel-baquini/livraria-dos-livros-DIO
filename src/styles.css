@@ -35,6 +35,7 @@
 
 :root {
     --c-dark-10: rgba(0, 0, 0, 0.1);
+    --c-dark-20: rgba(0, 0, 0, 0.2);
     --c-dark-40: rgba(0, 0, 0, 0.4);
     --c-dark-60: rgba(0, 0, 0, 0.6);
     --c-dark-80: rgba(0, 0, 0, 0.8);
@@ -113,7 +114,7 @@ app-root {
     line-height: 125%;
 }
 
-.text-preset-450, .field-input {
+.text-preset-450 {
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
@@ -153,4 +154,22 @@ app-root {
     font-size: 24px;
     font-weight: 700;
     line-height: 150%;
+}
+
+.table {
+    width: 100%;
+}
+
+/* * = tbody/thead */
+.table > * > tr {
+    border-bottom: 1px solid var(--c-dark-20);
+}
+
+.table > * > tr:last-child {
+    border: none;
+}
+
+.table > * > tr > td {
+    color: var(--c-dark-60);
+    padding: 24px 12px;
 }

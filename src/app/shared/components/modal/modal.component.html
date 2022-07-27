@@ -1,6 +1,9 @@
 <div class="modal">
-    <div class="modal-title text-preset-500">{{this.modalTitle}}</div>
-    <span class="modal-body text-preset-450" *ngIf="this.modalTextContent !== ''">{{this.modalTextContent}}</span>
+    <div class="modal-title text-preset-500">{{this.title}}</div>
+    <span class="modal-body text-preset-450" *ngIf="this.textContent !== ''">{{this.textContent}}</span>
+    <div class="model-body" *ngIf="this.textContent === ''">
+        <ng-content></ng-content>
+    </div>
     <div class="modal-buttons">
         <span
             class="close-button text-preset-350"

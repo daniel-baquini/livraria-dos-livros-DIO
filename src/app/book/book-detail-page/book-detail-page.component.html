@@ -39,3 +39,32 @@
         <span class="book-synopsis__description text-preset-450">Em seu primeiro livro, Thiago Nigro, criador da plataforma O Primo Rico, ensina aos leitores os três pilares para atingir a independência financeira: gastar bem, investir melhor e ganhar mais. Por meio de dados e de sua própria experiência como investidor e assessor, Nigro mostra que a riqueza é possível para todos – basta estar disposto a aprender e se dedicar.</span>
     </div>
 </app-default-page>
+<app-modal
+    [closeButtonLabel]="'Entendido'"
+    [title]="'Opções de parcelamento'"
+>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>1x sem juros</td>
+                <td class="price-cell">{{ 70 | currency }}</td>
+            </tr>
+            <tr>
+                <td>2x sem juros</td>
+                <td class="price-cell">{{ 35 | currency }}</td>
+            </tr>
+            <tr>
+                <td>3x sem juros</td>
+                <td class="price-cell">{{ 23.34 | currency }}</td>
+            </tr>
+            <tr>
+                <td>4x sem juros</td>
+                <td class="price-cell">{{ 17.5 | currency }}</td>
+            </tr>
+            <tr>
+                <td>5x com juros (2% ao mês)</td>
+                <td class="price-cell">{{ 14.28 | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+</app-modal>

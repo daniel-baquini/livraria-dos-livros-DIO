@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ModalComponent {
     @Input() closeButtonLabel: string = "Fechar";
-    @Input() modalTextContent: string = "";
-    @Input() modalTitle: string = "";
+    @Input() textContent: string = "";
+    @Input() title: string = "";
 
     @Output() closeButtonClick = new EventEmitter();
 }

@@ -118,3 +118,7 @@
 .book-synopsis__description {
     color: var(--c-dark-60);
 }
+
+.price-cell {
+    text-align: right;
+}
