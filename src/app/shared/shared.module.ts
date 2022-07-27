@@ -5,10 +5,12 @@ import { CommonModule } from '@angular/common';
 import { DefaultPageComponent } from './components/default-page/default-page.component';
 import { FieldComponent } from './components/field/field.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { NavComponent } from './components/nav/nav.component';
 import { NgModule } from '@angular/core';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { SmallButtonComponent } from './components/small-button/small-button.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -19,8 +21,9 @@ import { ModalComponent } from './components/modal/modal.component';
         FieldComponent,
         LogoComponent,
         ModalComponent,
+        NotFoundPageComponent,
         NavComponent,
-        SmallButtonComponent
+        SmallButtonComponent,
     ],
     exports: [
         AlertComponent,
@@ -35,7 +38,8 @@ import { ModalComponent } from './components/modal/modal.component';
         SmallButtonComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ]
 })
 export class SharedModule { }
