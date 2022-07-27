@@ -1,0 +1,27 @@
+:host {
+    display: contents;
+}
+
+.page-title {
+    color: var(--c-dark-80);
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.items > * {
+    width: 100%;
+}
+
+.buttons-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    max-width: 800px;
+    width: 100%;
+}
