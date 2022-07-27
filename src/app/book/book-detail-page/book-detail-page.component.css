@@ -1,0 +1,120 @@
+:host {
+    display: contents;
+}
+
+.book-info {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.book-cover {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    width: 192px;
+}
+
+.book-cover > img {
+    left: 50%;
+    max-width: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.book-data {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.book-data__name-author-and-rate {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.book-data__name-and-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-data__name {
+    color: var(--c-dark-80);
+}
+
+.book-data__author {
+    color: var(--c-dark-60);
+}
+
+.book-data__rate {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.book-data__price-and-installment {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-data__price {
+    color: var(--c-dark-80);
+}
+
+.book-data__installment {
+    color: var(--c-dark-60);
+}
+
+.installment__link {
+    color: var(--c-primary-60);
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.installment__link:hover {
+    color: var(--c-primary-80);
+}
+
+.book-buy-or-add-to-cart {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.book-added-to-cart {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.book-added-to-cart > .icon-check {
+    color: var(--c-dark-100);
+    font-size: 16px;
+}
+
+.book-added-to-cart__label {
+    color: var(--c-dark-60);
+}
+
+.book-synopsis {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.book-synopsis__section-title {
+    color: var(--c-dark-80);
+}
+
+.book-synopsis__description {
+    color: var(--c-dark-60);
+}

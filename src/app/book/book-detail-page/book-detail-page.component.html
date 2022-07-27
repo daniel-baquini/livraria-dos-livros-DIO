@@ -1,0 +1,41 @@
+<app-default-page>
+    <div class="book-info">
+        <div class="book-cover">
+            <img alt="Capa do livro" src="./assets/images/a.png">
+        </div>
+        <div class="book-data">
+            <div class="book-data__name-author-and-rate">
+                <div class="book-data__name-and-author">
+                    <span class="book-data__name text-preset-520">Do Mil ao Milhão. Sem Cortar o Cafezinho</span>
+                    <span class="book-data__author text-preset-350">Por: Thiago Nigro</span>
+                </div>
+                <div class="book-data__rate">
+                    <div class="rate__stars">
+                        <span class="icon-full-star"></span>
+                        <span class="icon-full-star"></span>
+                        <span class="icon-full-star"></span>
+                        <span class="icon-full-star"></span>
+                        <span class="icon-empty-star"></span>
+                    </div>
+                    <span class="rate__quantity">(1100)</span>
+                </div>
+            </div>
+            <div class="book-data__price-and-installment">
+                <span class="book-data__price text-preset-430">R$ 70<span class="text-preset-230">,00</span></span>
+                <span class="book-data__installment text-preset-350">ou até 4x de R$ 17,50 sem juros - <span class="installment__link">Ver parcelamento</span></span>
+            </div>
+            <div class="book-buy-or-add-to-cart">
+                <app-button [label]="'Comprar'"></app-button>
+                <app-button [label]="'Adicionar ao carrinho'" [type]="'secondary'"></app-button>
+            </div>
+            <div class="book-added-to-cart">
+                <span class="icon-check"></span>
+                <span class="book-added-to-cart__label">Adicionado ao carrinho</span>
+            </div>
+        </div>
+    </div>
+    <div class="book-synopsis">
+        <span class="book-synopsis__section-title text-preset-520">Sinopse</span>
+        <span class="book-synopsis__description text-preset-450">Em seu primeiro livro, Thiago Nigro, criador da plataforma O Primo Rico, ensina aos leitores os três pilares para atingir a independência financeira: gastar bem, investir melhor e ganhar mais. Por meio de dados e de sua própria experiência como investidor e assessor, Nigro mostra que a riqueza é possível para todos – basta estar disposto a aprender e se dedicar.</span>
+    </div>
+</app-default-page>
