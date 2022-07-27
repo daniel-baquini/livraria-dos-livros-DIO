@@ -4,7 +4,7 @@
     <app-field [label]="'Senha'"></app-field>
     <div class="form-buttons">
         <app-button [label]="'Entrar'"></app-button>
-        <div class="form-buttons__forgot-password">Esqueceu sua senha?</div>
+        <div class="form-buttons__forgot-password" [routerLink]="'/authentication/forgot-password'">Esqueceu sua senha?</div>
     </div>
 </form>
 <span class="create-account text-preset-450">
