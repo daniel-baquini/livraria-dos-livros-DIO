@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-logo',
-  templateUrl: './logo.component.html',
-  styleUrls: ['./logo.component.css']
+    selector: 'app-logo',
+    templateUrl: './logo.component.html',
+    styleUrls: ['./logo.component.css']
 })
-export class LogoComponent implements OnInit {
+export class LogoComponent {
 
-  constructor() { }
+    constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+    @HostListener("click", [])
+    onHostClick() {
+        this.router.navigateByUrl("");
+    }
 
 }
