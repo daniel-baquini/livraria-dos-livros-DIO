@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./field.component.css']
 })
 export class FieldComponent {
-    @Input() label: string = "";
+    @Input() label: string | undefined;
 }

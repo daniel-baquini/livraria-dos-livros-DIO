@@ -18,7 +18,6 @@ export class UserPreferencesService {
 
         if(userPreferencesString === null) {
             userPreferences = defaultUserPreferences;
-            return
         }
         else {        
             userPreferences = JSON.parse(userPreferencesString);
@@ -27,13 +26,13 @@ export class UserPreferencesService {
             // After an update on user preferences, if a new key is create, it will be assigned to the
             // already existing preferences.
             for(key in defaultUserPreferences) {
-                if(!(key in Object.keys(userPreferences))) {
+                if(!Object.keys(userPreferences).includes(key)) {
                     userPreferences[key] = defaultUserPreferences[key];
                 }
             }
         }
 
-        localStorage.setItem(this.userPreferencesKey, JSON.stringify(defaultUserPreferences));
+        localStorage.setItem(this.userPreferencesKey, JSON.stringify(userPreferences));
     }
 
     get userPreferences(): UserPreferences {

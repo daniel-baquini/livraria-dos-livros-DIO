@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
         ModalComponent,
         NotFoundPageComponent,
         NavComponent,
-        SmallButtonComponent,
+        SmallButtonComponent
     ],
     exports: [
         AlertComponent,

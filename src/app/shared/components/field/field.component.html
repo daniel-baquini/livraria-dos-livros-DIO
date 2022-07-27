@@ -1,8 +1,13 @@
-<div class="label-wrapper" *ngIf="this.label !== ''">
+<div class="label-wrapper" *ngIf="!!this.label">
     <div class="label-wrapper__left-margin-label"></div>
     <span class="label-wrapper__label text-preset-320">{{this.label}}</span>
     <div class="label-wrapper__right-margin-label"></div>
 </div>
-<div class="input" [ngClass]="{ labeless: this.label === '' }">
+<!-- 
+    Why use ngIf instead of ngClass or class interpolation (like in the alert component)?
+    Because, for some reason, there is a bug on this component. [ngClass] nor class interpolation
+    is working
+ -->
+<div class="field-group" [ngClass]="{ 'labeless': !this.label}">
     <input class="text-preset-450" type="text">
 </div>
