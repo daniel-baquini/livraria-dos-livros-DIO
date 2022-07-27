@@ -1,5 +1,5 @@
 :host {
-    display: contents;
+    display: block;
 }
 
 .host {
@@ -9,6 +9,7 @@
     flex-direction: row;
     gap: 24px;
     padding: 24px;
+    width: 100%;
 }
 
 .host.error {

@@ -15,6 +15,7 @@ form {
 .buttons-row {
     display: flex;
     flex-direction: row;
+    gap: 8px;
     justify-content: flex-end;
     max-width: 800px;
     width: 100%;

@@ -1,0 +1,38 @@
+:host {
+    display: contents;
+}
+
+app-alert, .payment-options, .buttons-row {
+    max-width: 800px;
+    width: 100%;
+}
+
+.payment-options {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.payment-options__option {
+    background-color: var(--c-white-30);
+    border-radius: 4px;
+    color: var(--c-dark-80);
+    cursor: pointer;
+    padding: 20px 12px;
+    width: 100%;
+}
+
+.payment-options__option--active {
+    background-color: transparent;
+    border: 1px solid var(--c-primary-60);
+}
+
+.buttons-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-end;
+    max-width: 800px;
+    width: 100%;
+}

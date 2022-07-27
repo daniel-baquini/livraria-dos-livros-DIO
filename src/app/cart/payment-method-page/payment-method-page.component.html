@@ -1,0 +1,18 @@
+<app-default-page>
+    <span class="page-title text-preset-650">Forma de pagamento</span>
+    <app-alert
+        [canClose]="false"
+        [message]="'Por ser uma demo, nenhum dado será exigido nesta etapa, basta selecionar o método de pagamento e finalizar a compra.'"
+        [type]="'warning'"
+    ></app-alert>
+    <div class="payment-options">
+        <div class="payment-options__option text-preset-450">Boleto</div>
+        <div class="payment-options__option payment-options__option--active text-preset-450">Cartão de crédito</div>
+        <div class="payment-options__option text-preset-450">Paypal</div>
+        <div class="payment-options__option text-preset-450">Pix</div>
+    </div>
+    <div class="buttons-row">
+        <app-button [label]="'Voltar'" [type]="'secondary'"></app-button>
+        <app-button [label]="'Finalizar pedido'" [type]="'primary'"></app-button>
+    </div>
+</app-default-page>
