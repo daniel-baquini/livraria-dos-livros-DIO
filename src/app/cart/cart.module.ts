@@ -4,11 +4,16 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { DeliveryAddressPageComponent } from './delivery-address-page/delivery-address-page.component';
 
 const cartRoutes: Routes = [
     {
         component: CartPageComponent,
         path: ""
+    },
+    {
+        component: DeliveryAddressPageComponent,
+        path: "delivery-address"
     }
 ];
 
@@ -16,7 +21,8 @@ const cartRoutes: Routes = [
 @NgModule({
     declarations: [
         CartItemComponent,
-        CartPageComponent
+        CartPageComponent,
+        DeliveryAddressPageComponent
     ],
     imports: [
         RouterModule.forChild(cartRoutes),

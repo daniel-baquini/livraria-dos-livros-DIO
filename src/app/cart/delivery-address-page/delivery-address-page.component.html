@@ -1,0 +1,30 @@
+<app-default-page>
+    <span class="page-title text-preset-650">Seu carrinho</span>
+    <form class="grid" [noValidate]="">
+        <div class="col-2">
+            <app-field [label]="'CPF (Opcional)'"></app-field>
+        </div>
+        <div class="col-6">
+            <app-field [label]="'Logradouro'"></app-field>
+        </div>
+        <div class="col-2">
+            <app-field [label]="'Número'"></app-field>
+        </div>
+        <div class="col-6">
+            <app-field [label]="'Bairro'"></app-field>
+        </div>
+        <div class="col-4">
+            <app-field [label]="'Cidade'"></app-field>
+        </div>
+        <div class="col-4">
+            <app-field [label]="'Estado'"></app-field>
+        </div>
+        <div class="col-8">
+            <app-field [label]="'Complemento (Opcional)'"></app-field>
+        </div>
+    </form>
+    <div class="buttons-row">
+        <app-button [label]="'Voltar'" [type]="'secondary'"></app-button>
+        <app-button [label]="'Forma de pagamento'" [type]="'primary'"></app-button>
+    </div>
+</app-default-page>

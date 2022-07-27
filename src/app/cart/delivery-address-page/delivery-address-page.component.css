@@ -1,0 +1,21 @@
+:host {
+    display: contents;
+}
+
+.page-title {
+    color: var(--c-dark-80);
+}
+
+form {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+}
+
+.buttons-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    max-width: 800px;
+    width: 100%;
+}
