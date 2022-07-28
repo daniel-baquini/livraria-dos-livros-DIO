@@ -41,7 +41,7 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     // Create a new table called "user_roles" with two columns: "roles" and "user_id".
     // "user_id" will be used to join with "user" table through the "user" primary key
-    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "tbl_user_roles", joinColumns = @JoinColumn(name = "user_id"))
     // The columns in "user_roles" now will be: "role_id" and "user_id"
     @Column(name = "role_id")
     private List<String> roles = new ArrayList<>();

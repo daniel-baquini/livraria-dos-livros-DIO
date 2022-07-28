@@ -3,7 +3,6 @@ package com.backend.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
@@ -18,8 +17,6 @@ public class SecurityConfiguration {
 
     @Autowired
     public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
-        // TODO: If there is a error creating/authenticating users, changes "BCryptPasswordEncoder"
-        // to "NoOpPasswordEncoder.getInstance()".
         auth.userDetailsService(securityService).passwordEncoder(new BCryptPasswordEncoder());
     }
 
@@ -32,7 +29,8 @@ public class SecurityConfiguration {
             //
             // the code bellow makes all non authenticated requests redirect to login page
             // anyRequest().authenticated().and().formLogin(); 
-            .antMatchers("/book").authenticated()
+            .antMatchers("/book", "/book/**").permitAll()
+            .antMatchers("/images", "/images/**").permitAll()
             .anyRequest().authenticated().and().httpBasic(); 
 
         return http.build();
