@@ -4,6 +4,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { CommonModule } from '@angular/common';
 import { DefaultPageComponent } from './components/default-page/default-page.component';
 import { FieldComponent } from './components/field/field.component';
+import { HttpClientModule } from '@angular/common/http'
 import { LogoComponent } from './components/logo/logo.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -39,6 +40,7 @@ import { RouterModule } from '@angular/router';
     ],
     imports: [
         CommonModule,
+        HttpClientModule,
         RouterModule
     ]
 })
