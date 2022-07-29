@@ -23,11 +23,8 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-            .antMatchers("/", "/app", "/app/**").permitAll()
-            // .and().formLogin() redirects user to login page
-            //
-            // the code bellow makes all non authenticated requests redirect to login page
-            // anyRequest().authenticated().and().formLogin(); 
+            .antMatchers("/").permitAll()
+            .antMatchers("/app", "/app/**").permitAll()
             .antMatchers("/book", "/book/**").permitAll()
             .antMatchers("/images", "/images/**").permitAll()
             .anyRequest().authenticated().and().httpBasic();

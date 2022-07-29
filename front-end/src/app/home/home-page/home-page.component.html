@@ -7,18 +7,11 @@
         </div>
     </div>
     <div class="books">
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
-        <app-book-preview></app-book-preview>
+        <app-book-preview
+            [book]="book"
+            *ngFor="let book of this.books"
+            [routerLink]="'/book/' + book.id"
+        ></app-book-preview>
     </div>
     <span class="load-more text-preset-470">Carregar mais</span>
 </app-default-page>

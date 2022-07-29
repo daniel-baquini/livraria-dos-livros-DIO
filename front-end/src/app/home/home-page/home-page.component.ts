@@ -1,7 +1,7 @@
+import Book from 'src/app/shared/backend/book/book.model';
 import { BookService } from 'src/app/shared/backend/book/book.service';
 import { Component, OnInit } from '@angular/core';
 import { UserPreferencesService } from 'src/app/shared/services/user-preferences/user-preferences.service';
-import Book from 'src/app/shared/backend/book/book.model';
 
 @Component({
     selector: 'app-home-page',
@@ -20,7 +20,6 @@ export class HomePageComponent implements OnInit {
     ngOnInit(): void {
         this.bookService.readAll().subscribe(x => {
             this.books = x;
-            console.log(x);
         });
     }
     

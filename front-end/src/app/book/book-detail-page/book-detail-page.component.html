@@ -41,6 +41,7 @@
 </app-default-page>
 <app-modal
     [closeButtonLabel]="'Entendido'"
+    *ngIf="this.showInstallmentModal"
     [title]="'Opções de parcelamento'"
 >
     <table class="table">
