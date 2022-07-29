@@ -1,4 +1,4 @@
-import Book from '../../backend/book/book.model';
+import Book from '../../shared/backend/book/book.model';
 import { Component, Input } from '@angular/core';
 
 @Component({

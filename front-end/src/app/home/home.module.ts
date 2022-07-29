@@ -1,3 +1,4 @@
+import { BookPreviewComponent } from './book-preview/book-preview.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,6 +13,7 @@ const homeRoutes: Routes = [
 
 @NgModule({
     declarations: [
+        BookPreviewComponent,
         HomePageComponent
     ],
     imports: [

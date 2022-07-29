@@ -1,5 +1,4 @@
 import { AlertComponent } from './components/alert/alert.component';
-import { BookPreviewComponent } from './components/book-preview/book-preview.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CommonModule } from '@angular/common';
 import { DefaultPageComponent } from './components/default-page/default-page.component';
@@ -16,7 +15,6 @@ import { RouterModule } from '@angular/router';
 @NgModule({
     declarations: [
         AlertComponent,
-        BookPreviewComponent,
         ButtonComponent,
         DefaultPageComponent,
         FieldComponent,
@@ -28,7 +26,6 @@ import { RouterModule } from '@angular/router';
     ],
     exports: [
         AlertComponent,
-        BookPreviewComponent,
         ButtonComponent,
         CommonModule,
         DefaultPageComponent,
