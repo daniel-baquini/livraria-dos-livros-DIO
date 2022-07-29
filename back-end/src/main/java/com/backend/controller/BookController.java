@@ -25,4 +25,10 @@ public class BookController {
         return this.bookRepository.findAll();
     }
 
+    @GetMapping("/app/**")
+    @ResponseStatus(HttpStatus.OK)
+    public String hey() {
+        return "ha";
+    }
+
 }

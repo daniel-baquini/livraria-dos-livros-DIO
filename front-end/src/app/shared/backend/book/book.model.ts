@@ -1,8 +1,13 @@
 interface Book {
     author: string;
+    bookCoverUrl: string;
+    description: string;
     id: string;
     price: number;
-    title: string
+    quantity: number;
+    rating: number;
+    reviewsQuantity: number;
+    title: string;
 }
 
 export default Book

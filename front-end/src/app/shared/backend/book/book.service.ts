@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CrudBackendService } from '../crud-backend.service';
 import Book from './book.model';
 
 @Injectable({
@@ -6,7 +8,7 @@ import Book from './book.model';
 })
 export class BookService {
     
-    constructor() { }
+    constructor(private crudBackendService: CrudBackendService) { }
 
     create(model: Book): Promise<void> {
         throw new Error('Method not implemented.');
@@ -20,8 +22,8 @@ export class BookService {
         throw new Error('Method not implemented.');
     }
 
-    readAll(): Promise<Book[]> {
-        throw new Error('Method not implemented.');
+    readAll(): Observable<Book[]> {
+        return this.crudBackendService.readAll<Book>("book");
     }
 
     update(model: Book): Promise<void> {

@@ -21,23 +21,23 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
     private Double price;
     private Integer quantity;
     private Double rating;
     private Integer reviewsQuantity;
+    private String title;
 
     public Book() { }
 
-    public Book(String author, String bookCoverUrl, String description, String name, Double price, Integer quantity, Double rating, Integer reviewsQuantity) {
+    public Book(String author, String bookCoverUrl, String description, Double price, Integer quantity, Double rating, Integer reviewsQuantity, String title) {
         this.author = author;
         this.bookCoverUrl = bookCoverUrl;
         this.description = description;
-        this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.rating = rating;
         this.reviewsQuantity = reviewsQuantity;
+        this.title = title;
     }
 
     public String getAuthor() {
@@ -56,7 +56,6 @@ public class Book {
         this.bookCoverUrl = bookCoverUrl;
     }
 
-
     public String getDescription() {
         return description;
     }
@@ -71,14 +70,6 @@ public class Book {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Double getPrice() {
@@ -111,6 +102,14 @@ public class Book {
 
     public void setReviewsQuantity(Integer reviewsQuantity) {
         this.reviewsQuantity = reviewsQuantity;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
 }

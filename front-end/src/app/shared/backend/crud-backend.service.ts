@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -21,15 +21,22 @@ export class CrudBackendService {
             )
         );
     }
+    
     delete(id: string): Promise<void> {
         throw new Error('Method not implemented.');
     }
+    
     read(id: string): Promise<any> {
         throw new Error('Method not implemented.');
     }
-    readAll(): Promise<any[]> {
-        throw new Error('Method not implemented.');
+
+    readAll<T>(controllerPath: string): Observable<T[]> {
+        return this.httpClient.get<T[]>(
+            `${environment.backendUrl}/${controllerPath}/getAll`,
+            { headers: { "Content-type": "application/json" } }
+        )
     }
+
     update(model: any): Promise<void> {
         throw new Error('Method not implemented.');
     }
