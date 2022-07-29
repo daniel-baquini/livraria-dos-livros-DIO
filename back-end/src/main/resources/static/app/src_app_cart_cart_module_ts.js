@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CartItemComponent": () => (/* binding */ CartItemComponent)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _cart_management_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cart-management.service */ 971);
+/* harmony import */ var _cart_management_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cart-management.service */ 5971);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _shared_components_small_button_small_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/components/small-button/small-button.component */ 6593);
 
@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CartPageComponent": () => (/* binding */ CartPageComponent)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _cart_management_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cart-management.service */ 971);
+/* harmony import */ var _cart_management_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cart-management.service */ 5971);
 /* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/components/button/button.component */ 42);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/components/default-page/default-page.component */ 8014);

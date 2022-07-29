@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkfront_end"] = self["webpackChunkfront_end"] || []).push([["src_app_home_home_module_ts"],{
 
-/***/ 584:
+/***/ 1584:
 /*!*************************************************************!*\
   !*** ./src/app/home/book-preview/book-preview.component.ts ***!
   \*************************************************************/
@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/components/default-page/default-page.component */ 8014);
 /* harmony import */ var _shared_components_field_field_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/components/field/field.component */ 6885);
 /* harmony import */ var _shared_components_modal_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/components/modal/modal.component */ 312);
-/* harmony import */ var _book_preview_book_preview_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../book-preview/book-preview.component */ 584);
+/* harmony import */ var _book_preview_book_preview_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../book-preview/book-preview.component */ 1584);
 
 
 
@@ -117,7 +117,7 @@ function HomePageComponent_app_modal_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("closeButtonClick", function HomePageComponent_app_modal_11_Template_app_modal_closeButtonClick_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r3.closeButtonClick()); });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("closeButtonLabel", "Entendido")("textContent", "Esse aplicativo \u00E9 uma demo de um e-commerce de livros. Por ser uma demo, as compras n\u00E3o podem ser conclu\u00EDdas, mas, voc\u00EA pode adicionar itens ao carrinho, fornecer um endere\u00E7o de entrega e escolher um m\u00E9todo de pagamento.\n\nOs dados dos livros foram retirados da amazon no dia 03/07/2022")("title", "Boas vindas!");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("closeButtonLabel", "Entendido")("textContent", "Esse aplicativo \u00E9 uma demo de um e-commerce de livros. Por ser uma demo, as compras n\u00E3o podem ser conclu\u00EDdas, mas, voc\u00EA pode adicionar itens ao carrinho, fornecer um endere\u00E7o de entrega e escolher um m\u00E9todo de pagamento.\n\nOs dados dos livros foram retirados da amazon no dia 28/07/2022")("title", "Boas vindas!");
 } }
 class HomePageComponent {
     constructor(bookService, userPreferencesService) {
@@ -174,7 +174,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HomeModule": () => (/* binding */ HomeModule)
 /* harmony export */ });
-/* harmony import */ var _book_preview_book_preview_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./book-preview/book-preview.component */ 584);
+/* harmony import */ var _book_preview_book_preview_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./book-preview/book-preview.component */ 1584);
 /* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home-page/home-page.component */ 6122);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/shared.module */ 4466);

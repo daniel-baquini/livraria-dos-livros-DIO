@@ -1,13 +1,22 @@
-<div class="label-wrapper" *ngIf="!!this.label">
-    <div class="label-wrapper__left-margin-label"></div>
-    <span class="label-wrapper__label text-preset-320">{{this.label}}</span>
-    <div class="label-wrapper__right-margin-label"></div>
+<div class="field">
+    <div class="label-wrapper" *ngIf="!!this.label">
+        <div class="label-wrapper__left-margin-label"></div>
+        <span class="label-wrapper__label text-preset-320">{{this.label}}</span>
+        <div class="label-wrapper__right-margin-label"></div>
+    </div>
+    <div class="field-group" [ngClass]="{ 'labeless': !this.label}">
+        <input
+            class="text-preset-450"
+            (focus)="this.onTouchedFn()"
+            (input)="this.onChangeFn($event)"
+            [type]="this._type"
+        >
+        <span
+            class="field-group__icon"
+            (click)="this.togglePasswordView()"
+            [ngClass]="{ 'icon-hide-password': this._type !== 'password', 'icon-show-password': this._type === 'password' }"
+            *ngIf="this.type === 'password'"
+        ></span>
+    </div>
 </div>
-<!-- 
-    Why use ngIf instead of ngClass or class interpolation (like in the alert component)?
-    Because, for some reason, there is a bug on this component. [ngClass] nor class interpolation
-    is working
- -->
-<div class="field-group" [ngClass]="{ 'labeless': !this.label}">
-    <input class="text-preset-450" type="text">
-</div>
+<span class="error-message text-preset-360">{{this.fieldError}}</span>

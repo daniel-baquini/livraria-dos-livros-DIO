@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var src_app_shared_backend_book_book_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/backend/book/book.service */ 2649);
-/* harmony import */ var src_app_cart_cart_management_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/cart/cart-management.service */ 971);
+/* harmony import */ var src_app_cart_cart_management_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/cart/cart-management.service */ 5971);
 /* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/components/button/button.component */ 42);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/components/default-page/default-page.component */ 8014);

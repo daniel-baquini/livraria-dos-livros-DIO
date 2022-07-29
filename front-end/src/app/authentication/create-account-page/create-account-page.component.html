@@ -1,11 +1,28 @@
 <app-logo></app-logo>
-<form [noValidate]>
-    <app-field [label]="'Nome'"></app-field>
-    <app-field [label]="'Sobrenome'"></app-field>
-    <app-field [label]="'Email'"></app-field>
-    <app-field [label]="'Senha'"></app-field>
+<form [formGroup]="this.form" [noValidate]>
+    <app-field
+        [abstractControl]="this.form.controls['name']"
+        formControlName="name"
+        [label]="'Nome'"
+    ></app-field>
+    <app-field
+        [abstractControl]="this.form.controls['surname']"
+        formControlName="surname"
+        [label]="'Sobrenome'"
+    ></app-field>
+    <app-field
+        [abstractControl]="this.form.controls['email']"
+        formControlName="email"
+        [label]="'Email'"
+    ></app-field>
+    <app-field
+        [abstractControl]="this.form.controls['password']"
+        formControlName="password"
+        [label]="'Senha'"
+        [type]="'password'"
+    ></app-field>
 </form>
 <div class="buttons-row">
-    <app-button [label]="'Voltar'" [routerLink]="''" [type]="'secondary'"></app-button>
-    <app-button [label]="'Cadastrar-se'"></app-button>
+    <app-button [label]="'Voltar'" [routerLink]="'/authentication'" [type]="'secondary'"></app-button>
+    <app-button [disabled]="this.form.invalid" [label]="'Cadastrar-se'"></app-button>
 </div>

@@ -2,6 +2,7 @@ import { CreateAccountPageComponent } from './create-account-page/create-account
 import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
@@ -27,6 +28,7 @@ const authenticationRoutes: Routes = [
         LoginPageComponent
     ],
     imports: [
+        ReactiveFormsModule,
         RouterModule.forChild(authenticationRoutes),
         SharedModule
     ]

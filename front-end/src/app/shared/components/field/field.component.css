@@ -1,7 +1,10 @@
 :host {
+    height: fit-content;
+}
+
+:host, .field {
     display: flex;
     flex-direction: column;
-    height: 64px;
     width: 100%;
 }
 
@@ -55,10 +58,27 @@
     padding: 16px;
 }
 
+.field-group > .field-group__icon {
+    color: var(--c-dark-80);
+    cursor: pointer;
+    font-size: 24px;
+    transition: 250ms;
+}
+
+.field-group > .field-group__icon:hover {
+    color: var(--c-dark-100);
+}
+
 input {
     background-color: transparent;
     border: none;
     color: var(--c-dark-60);
     flex: 1;
     outline: none;
+}
+
+.error-message {
+    display: block;
+    color: var(--c-red-60);
+    padding-left: 16px;
 }
