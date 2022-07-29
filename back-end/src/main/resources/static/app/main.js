@@ -24,7 +24,7 @@ const routes = [
         path: "authentication"
     },
     {
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_book_book_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./book/book.module */ 3265)).then(m => m.BookModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_book_book_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./book/book.module */ 3265)).then(m => m.BookModule),
         path: "book"
     },
     {
@@ -32,7 +32,7 @@ const routes = [
         path: "cart"
     },
     {
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_home_home_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./home/home.module */ 3467)).then(m => m.HomeModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_home_home_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./home/home.module */ 3467)).then(m => m.HomeModule),
         path: ""
     },
     {

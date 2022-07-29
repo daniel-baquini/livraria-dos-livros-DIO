@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
-public class RediController {
+public class AppController {
 
     @RequestMapping(value="/", method = RequestMethod.GET)
     public RedirectView ha() {

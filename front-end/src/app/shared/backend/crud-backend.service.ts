@@ -26,8 +26,11 @@ export class CrudBackendService {
         throw new Error('Method not implemented.');
     }
     
-    read(id: string): Promise<any> {
-        throw new Error('Method not implemented.');
+    read<T>(controllerPath: string, id: any): Observable<T | undefined> {
+        return this.httpClient.get<T | undefined>(
+            `${environment.backendUrl}/${controllerPath}/get/${id}`,
+            { headers: { "Content-type": "application/json" } }
+        )
     }
 
     readAll<T>(controllerPath: string): Observable<T[]> {

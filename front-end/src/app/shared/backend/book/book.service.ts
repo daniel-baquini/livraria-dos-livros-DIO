@@ -7,7 +7,9 @@ import Book from './book.model';
     providedIn: 'root'
 })
 export class BookService {
-    
+
+    public readonly controllerPath: string = "book";
+
     constructor(private crudBackendService: CrudBackendService) { }
 
     create(model: Book): Promise<void> {
@@ -18,12 +20,12 @@ export class BookService {
         throw new Error('Method not implemented.');
     }
 
-    read(id: string): Promise<Book | undefined> {
-        throw new Error('Method not implemented.');
+    read(id: any): Observable<Book | undefined> {
+        return this.crudBackendService.read<Book>(this.controllerPath, id);
     }
 
     readAll(): Observable<Book[]> {
-        return this.crudBackendService.readAll<Book>("book");
+        return this.crudBackendService.readAll<Book>(this.controllerPath);
     }
 
     update(model: Book): Promise<void> {
