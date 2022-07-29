@@ -2,8 +2,8 @@
 <div class="nav-links">
     <div class="cart-wrapper" [routerLink]="'/cart'">
         <span class="cart-wrapper__icon icon-cart"></span>
-        <div class="cart-wrapper__itens-quantity-wrapper">
-            <span class="itens-quantity-wrapper__label text-preset-250">999</span>
+        <div class="cart-wrapper__itens-quantity-wrapper" *ngIf="this.cartItemQuantity > 0">
+            <span class="itens-quantity-wrapper__label text-preset-250">{{this.cartItemQuantity}}</span>
         </div>
     </div>
     <div class="vertical-divider"></div>

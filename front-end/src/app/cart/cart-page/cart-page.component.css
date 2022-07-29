@@ -25,3 +25,7 @@
     max-width: 800px;
     width: 100%;
 }
+
+.empty-cart-label {
+    color: var(--c-dark-80);
+}

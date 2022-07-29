@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartManagementService } from 'src/app/cart/cart-management.service';
 import Book from 'src/app/shared/backend/book/book.model';
 import { BookService } from 'src/app/shared/backend/book/book.service';
 
@@ -13,7 +14,12 @@ export class BookDetailPageComponent {
     book: Book | undefined;
     showInstallmentModal: boolean = false;
 
-    constructor(activatedRoute: ActivatedRoute, bookService: BookService, router: Router) {
+    constructor(
+        private activatedRoute: ActivatedRoute,
+        bookService: BookService,
+        private cartManagementService: CartManagementService,
+        router: Router
+    ) {
         const routeId: any = activatedRoute.snapshot.params["id"];
         if(routeId === undefined) {
             router.navigateByUrl("/")
@@ -22,6 +28,12 @@ export class BookDetailPageComponent {
         bookService.read(routeId).subscribe(x => {
             this.book = x;
         });
+    }
+
+    get isItemOnCart(): boolean {
+        return this.cartManagementService.isOnCart(
+            parseInt(this.activatedRoute.snapshot.params['id'])            
+        );
     }
 
     get priceInCentavos(): string {
@@ -34,6 +46,12 @@ export class BookDetailPageComponent {
         if(!this.book) return 0;
 
         return Math.floor(this.book.price);
+    }
+
+    addToCart(): void {
+        // This function is called only from a element that will be rendered when this.book !== undefined,
+        // so, we can use the "!".
+        this.cartManagementService.addItem(this.book!);
     }
 
     toggleShowInstallmentModal(): void {
