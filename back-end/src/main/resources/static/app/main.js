@@ -155,12 +155,6 @@ class CartManagementService {
             return;
         this.cart.push(new _cart_item_cart_item_model__WEBPACK_IMPORTED_MODULE_0__["default"](book, 1));
     }
-    deleteItem(bookId) {
-        const cartItemIndex = this.cart.findIndex(x => x.book.id === bookId);
-        if (cartItemIndex === -1)
-            return;
-        this.cart.splice(cartItemIndex, 1);
-    }
     decrementItem(bookId) {
         const cartItemToDecrement = this.cart.find(x => x.book.id === bookId);
         if (!cartItemToDecrement)
@@ -168,6 +162,12 @@ class CartManagementService {
         cartItemToDecrement.quantity--;
         if (cartItemToDecrement.quantity <= 0)
             this.deleteItem(bookId);
+    }
+    deleteItem(bookId) {
+        const cartItemIndex = this.cart.findIndex(x => x.book.id === bookId);
+        if (cartItemIndex === -1)
+            return;
+        this.cart.splice(cartItemIndex, 1);
     }
     incrementItem(bookId) {
         const cartItemToIncrement = this.cart.find(x => x.book.id === bookId);

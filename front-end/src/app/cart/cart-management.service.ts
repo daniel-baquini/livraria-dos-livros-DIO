@@ -14,19 +14,19 @@ export class CartManagementService {
         this.cart.push(new CartItem(book, 1));
     }
 
-    deleteItem(bookId: number): void {
-        const cartItemIndex: number = this.cart.findIndex(x => x.book.id === bookId);
-        if(cartItemIndex === -1) return
-
-        this.cart.splice(cartItemIndex, 1);
-    }
-
     decrementItem(bookId: number): void {
         const cartItemToDecrement: CartItem | undefined = this.cart.find(x => x.book.id === bookId);
         if(!cartItemToDecrement) return
 
         cartItemToDecrement.quantity--;
         if(cartItemToDecrement.quantity <= 0) this.deleteItem(bookId);
+    }
+
+    deleteItem(bookId: number): void {
+        const cartItemIndex: number = this.cart.findIndex(x => x.book.id === bookId);
+        if(cartItemIndex === -1) return
+
+        this.cart.splice(cartItemIndex, 1);
     }
 
     incrementItem(bookId: number): void {

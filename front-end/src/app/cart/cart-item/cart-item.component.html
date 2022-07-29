@@ -8,12 +8,12 @@
                 <span class="book-data__name text-preset-430">{{this.cartItem.book.title}}</span>
                 <span class="book-data__author text-preset-350">{{this.cartItem.book.author}}</span>
             </div>
-            <span class="book-data__remove-item text-preset-350">Remover item</span>
+            <span class="book-data__remove-item text-preset-350" (click)="this.deleteItem()">Remover item</span>
         </div>
         <div class="book-data__quantity">
-            <app-small-button [label]="'-'"></app-small-button>
+            <app-small-button (click)="this.decrementItem()" [label]="'-'"></app-small-button>
             <span class="quantity__label text-preset-420">{{this.cartItem.quantity}}</span>
-            <app-small-button [label]="'+'"></app-small-button>
+            <app-small-button (click)="this.incrementItem()" [label]="'+'"></app-small-button>
         </div>
         <span class="book-data__price text-preset-430">R$ {{this.priceInReal}}<span class="text-preset-230">,{{this.priceInCentavos}}</span></span>
     </div>
