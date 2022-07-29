@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.backend.entity.User;
-import com.backend.models.ForgotPassword;
-import com.backend.models.exception.DomainException;
-import com.backend.models.http.ApiReturn;
-import com.backend.user.UserService;
+import com.backend.model.ForgotPassword;
+import com.backend.model.exception.DomainException;
+import com.backend.model.http.ApiReturn;
+import com.backend.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

@@ -1,4 +1,4 @@
-package com.backend.user;
+package com.backend.service;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.backend.entity.User;
-import com.backend.models.exception.DomainException;
+import com.backend.model.exception.DomainException;
 import com.backend.repository.UserRepository;
 
 @Service

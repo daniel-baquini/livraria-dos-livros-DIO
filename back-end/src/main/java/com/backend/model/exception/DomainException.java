@@ -1,4 +1,4 @@
-package com.backend.models.exception;
+package com.backend.model.exception;
 
 public class DomainException extends RuntimeException {
 

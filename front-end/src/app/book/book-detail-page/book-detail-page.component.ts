@@ -18,11 +18,11 @@ export class BookDetailPageComponent {
         private activatedRoute: ActivatedRoute,
         bookService: BookService,
         private cartManagementService: CartManagementService,
-        router: Router
+        private router: Router
     ) {
         const routeId: any = activatedRoute.snapshot.params["id"];
         if(routeId === undefined) {
-            router.navigateByUrl("/")
+            this.router.navigateByUrl("/")
         }
 
         bookService.read(routeId).subscribe(x => {
@@ -52,6 +52,11 @@ export class BookDetailPageComponent {
         // This function is called only from a element that will be rendered when this.book !== undefined,
         // so, we can use the "!".
         this.cartManagementService.addItem(this.book!);
+    }
+
+    buyNow(): void {
+        this.addToCart();
+        this.router.navigateByUrl("/cart");
     }
 
     toggleShowInstallmentModal(): void {

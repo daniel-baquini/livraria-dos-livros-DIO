@@ -1,4 +1,4 @@
-package com.backend.models;
+package com.backend.model;
 
 public class ForgotPassword {
     

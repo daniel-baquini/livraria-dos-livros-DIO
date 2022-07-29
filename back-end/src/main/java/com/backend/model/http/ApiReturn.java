@@ -1,4 +1,4 @@
-package com.backend.models.http;
+package com.backend.model.http;
 
 public class ApiReturn<T> {
     

@@ -29,10 +29,11 @@ __webpack_require__.r(__webpack_exports__);
 
 function BookDetailPageComponent_ng_container_1_div_29_Template(rf, ctx) { if (rf & 1) {
     const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "app-button", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 25)(1, "app-button", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BookDetailPageComponent_ng_container_1_div_29_Template_app_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r4.buyNow()); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "app-button", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BookDetailPageComponent_ng_container_1_div_29_Template_app_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r4.addToCart()); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BookDetailPageComponent_ng_container_1_div_29_Template_app_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r6.addToCart()); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
@@ -48,7 +49,7 @@ function BookDetailPageComponent_ng_container_1_div_30_Template(rf, ctx) { if (r
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
 } }
 function BookDetailPageComponent_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 2)(2, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "img", 4);
@@ -73,7 +74,7 @@ function BookDetailPageComponent_ng_container_1_Template(rf, ctx) { if (rf & 1) 
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "span", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](26, "ou at\u00E9 4x de R$ 17,50 sem juros - ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](27, "span", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BookDetailPageComponent_ng_container_1_Template_span_click_27_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r6.toggleShowInstallmentModal()); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function BookDetailPageComponent_ng_container_1_Template_span_click_27_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r7.toggleShowInstallmentModal()); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](28, "Ver parcelamento");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](29, BookDetailPageComponent_ng_container_1_div_29_Template, 3, 3, "div", 20);
@@ -108,9 +109,9 @@ function BookDetailPageComponent_ng_container_1_Template(rf, ctx) { if (rf & 1) 
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r0.book.description);
 } }
 function BookDetailPageComponent_app_modal_2_Template(rf, ctx) { if (rf & 1) {
-    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "app-modal", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("closeButtonClick", function BookDetailPageComponent_app_modal_2_Template_app_modal_closeButtonClick_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r9); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r8.toggleShowInstallmentModal()); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("closeButtonClick", function BookDetailPageComponent_app_modal_2_Template_app_modal_closeButtonClick_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r10); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r9.toggleShowInstallmentModal()); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "table", 32)(2, "tbody")(3, "tr")(4, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, "1x sem juros");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -163,10 +164,11 @@ class BookDetailPageComponent {
     constructor(activatedRoute, bookService, cartManagementService, router) {
         this.activatedRoute = activatedRoute;
         this.cartManagementService = cartManagementService;
+        this.router = router;
         this.showInstallmentModal = false;
         const routeId = activatedRoute.snapshot.params["id"];
         if (routeId === undefined) {
-            router.navigateByUrl("/");
+            this.router.navigateByUrl("/");
         }
         bookService.read(routeId).subscribe(x => {
             this.book = x;
@@ -190,12 +192,16 @@ class BookDetailPageComponent {
         // so, we can use the "!".
         this.cartManagementService.addItem(this.book);
     }
+    buyNow() {
+        this.addToCart();
+        this.router.navigateByUrl("/cart");
+    }
     toggleShowInstallmentModal() {
         this.showInstallmentModal = !this.showInstallmentModal;
     }
 }
 BookDetailPageComponent.ɵfac = function BookDetailPageComponent_Factory(t) { return new (t || BookDetailPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_shared_backend_book_book_service__WEBPACK_IMPORTED_MODULE_0__.BookService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_cart_cart_management_service__WEBPACK_IMPORTED_MODULE_1__.CartManagementService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router)); };
-BookDetailPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: BookDetailPageComponent, selectors: [["app-book-detail-page"]], decls: 3, vars: 2, consts: [[4, "ngIf"], [3, "closeButtonLabel", "title", "closeButtonClick", 4, "ngIf"], [1, "book-info"], [1, "book-cover"], ["alt", "Capa do livro", 3, "src"], [1, "book-data"], [1, "book-data__name-author-and-rate"], [1, "book-data__name-and-author"], [1, "book-data__name", "text-preset-520"], [1, "book-data__author", "text-preset-350"], [1, "book-data__rate"], [1, "rate__stars"], [1, "icon-full-star"], [1, "icon-empty-star"], [1, "rate__quantity"], [1, "book-data__price-and-installment"], [1, "book-data__price", "text-preset-430"], [1, "text-preset-230"], [1, "book-data__installment", "text-preset-350"], [1, "installment__link", 3, "click"], ["class", "book-buy-or-add-to-cart", 4, "ngIf"], ["class", "book-added-to-cart", 4, "ngIf"], [1, "book-synopsis"], [1, "book-synopsis__section-title", "text-preset-520"], [1, "book-synopsis__description", "text-preset-450"], [1, "book-buy-or-add-to-cart"], [3, "label"], [3, "label", "type", "click"], [1, "book-added-to-cart"], [1, "icon-check"], [1, "book-added-to-cart__label"], [3, "closeButtonLabel", "title", "closeButtonClick"], [1, "table"], [1, "price-cell"]], template: function BookDetailPageComponent_Template(rf, ctx) { if (rf & 1) {
+BookDetailPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: BookDetailPageComponent, selectors: [["app-book-detail-page"]], decls: 3, vars: 2, consts: [[4, "ngIf"], [3, "closeButtonLabel", "title", "closeButtonClick", 4, "ngIf"], [1, "book-info"], [1, "book-cover"], ["alt", "Capa do livro", 3, "src"], [1, "book-data"], [1, "book-data__name-author-and-rate"], [1, "book-data__name-and-author"], [1, "book-data__name", "text-preset-520"], [1, "book-data__author", "text-preset-350"], [1, "book-data__rate"], [1, "rate__stars"], [1, "icon-full-star"], [1, "icon-empty-star"], [1, "rate__quantity"], [1, "book-data__price-and-installment"], [1, "book-data__price", "text-preset-430"], [1, "text-preset-230"], [1, "book-data__installment", "text-preset-350"], [1, "installment__link", 3, "click"], ["class", "book-buy-or-add-to-cart", 4, "ngIf"], ["class", "book-added-to-cart", 4, "ngIf"], [1, "book-synopsis"], [1, "book-synopsis__section-title", "text-preset-520"], [1, "book-synopsis__description", "text-preset-450"], [1, "book-buy-or-add-to-cart"], [3, "label", "click"], [3, "label", "type", "click"], [1, "book-added-to-cart"], [1, "icon-check"], [1, "book-added-to-cart__label"], [3, "closeButtonLabel", "title", "closeButtonClick"], [1, "table"], [1, "price-cell"]], template: function BookDetailPageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "app-default-page");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, BookDetailPageComponent_ng_container_1_Template, 36, 9, "ng-container", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();

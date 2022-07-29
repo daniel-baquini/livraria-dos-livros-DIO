@@ -14,3 +14,9 @@ spring:
         console:
             enabled: true
             path: /h2
+
+security:
+    config:
+        prefix: Bearer
+        key: SECRET_KEY
+        expiration: 3600000
