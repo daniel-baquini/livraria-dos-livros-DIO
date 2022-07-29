@@ -25,9 +25,11 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests()
             .antMatchers("/").permitAll()
             .antMatchers("/app", "/app/**").permitAll()
-            .antMatchers("/book", "/book/**").permitAll()
+            .antMatchers("/api/book", "/api/book/**").permitAll()
+            .antMatchers("/api/user", "/api/user/**").permitAll()
             .antMatchers("/images", "/images/**").permitAll()
             .anyRequest().authenticated().and().httpBasic();
+        http.csrf().disable();
 
         return http.build();
     }

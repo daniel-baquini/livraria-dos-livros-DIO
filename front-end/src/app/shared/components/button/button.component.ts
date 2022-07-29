@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 
 @Component({
     selector: 'app-button',
@@ -9,4 +9,12 @@ export class ButtonComponent {
     @Input() disabled: boolean = false;
     @Input() label: string = "";
     @Input() type: "primary" | "search" | "secondary" = "primary";
+
+    @HostListener("click", ["$event"])
+    onHostClick(event: Event): void {
+        if(this.disabled) {
+            event.stopPropagation();
+            return;
+        }
+    }
 }

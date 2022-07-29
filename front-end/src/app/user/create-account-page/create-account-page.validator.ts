@@ -6,20 +6,6 @@ import { AbstractControl, ValidationErrors } from "@angular/forms";
 })
 class CreateAccountPageValidator {
 
-    email(control: AbstractControl): null | ValidationErrors {
-        const value = `${control.value ?? ""}`.trim()
-
-        if(value.length === 0) {
-            return { email: "Necessário fornecer um email" }
-        }
-
-        if(!(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value))) {
-            return { 'email': "Formato de e-mail inválido." };
-        }
-
-        return null;
-    }
-
     name(control: AbstractControl): null | ValidationErrors {
         const value = `${control.value ?? ""}`.trim();
 
@@ -49,6 +35,21 @@ class CreateAccountPageValidator {
 
         return null;
     }
+
+    username(control: AbstractControl): null | ValidationErrors {
+        const value = `${control.value ?? ""}`.trim()
+
+        if(value.length === 0) {
+            return { email: "Necessário fornecer um email" }
+        }
+
+        if(!(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value))) {
+            return { 'email': "Formato de e-mail inválido." };
+        }
+
+        return null;
+    }
+    
 }
 
 export default CreateAccountPageValidator

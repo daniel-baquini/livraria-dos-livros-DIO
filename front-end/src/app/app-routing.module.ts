@@ -4,16 +4,16 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
 
 const routes: Routes = [
     {
-        loadChildren: () => import("./authentication/authentication.module").then(m => m.AuthenticationModule),
-        path: "authentication"
-    },
-    {
         loadChildren: () => import("./book/book.module").then(m => m.BookModule),
         path: "book"
     },
     {
         loadChildren: () => import("./cart/cart.module").then(m => m.CartModule),
         path: "cart"
+    },
+    {
+        loadChildren: () => import("./user/user.module").then(m => m.UserModule),
+        path: "user"
     },
     {
         loadChildren: () => import("./home/home.module").then(m => m.HomeModule),

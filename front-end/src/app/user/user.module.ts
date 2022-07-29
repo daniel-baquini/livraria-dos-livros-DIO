@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
-const authenticationRoutes: Routes = [
+const userRoutes: Routes = [
     {
         component: LoginPageComponent,
         path: ""
@@ -29,8 +29,8 @@ const authenticationRoutes: Routes = [
     ],
     imports: [
         ReactiveFormsModule,
-        RouterModule.forChild(authenticationRoutes),
+        RouterModule.forChild(userRoutes),
         SharedModule
     ]
 })
-export class AuthenticationModule { }
+export class UserModule { }

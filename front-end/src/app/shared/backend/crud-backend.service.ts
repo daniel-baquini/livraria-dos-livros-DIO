@@ -10,15 +10,11 @@ export class CrudBackendService {
     
     constructor(private httpClient: HttpClient) { }
 
-    create<T>(model: any): Promise<T> {
-        throw new Error('Method not implemented.');
-        
-        return firstValueFrom(
-            this.httpClient.post<T>(
-                environment.backendUrl,
-                JSON.stringify(model),
-                { headers: { "Content-type": "application/json" } }
-            )
+    create<T>(controllerPath: string, model: T): Observable<string> {
+        return this.httpClient.post<string>(
+            `${environment.backendUrl}/api/${controllerPath}/create`,
+            model,
+            { headers: { "Content-type": "application/json" } }
         );
     }
     
@@ -28,14 +24,14 @@ export class CrudBackendService {
     
     read<T>(controllerPath: string, id: any): Observable<T | undefined> {
         return this.httpClient.get<T | undefined>(
-            `${environment.backendUrl}/${controllerPath}/get/${id}`,
+            `${environment.backendUrl}/api/${controllerPath}/get/${id}`,
             { headers: { "Content-type": "application/json" } }
         )
     }
 
     readAll<T>(controllerPath: string): Observable<T[]> {
         return this.httpClient.get<T[]>(
-            `${environment.backendUrl}/${controllerPath}/getAll`,
+            `${environment.backendUrl}/api/${controllerPath}/getAll`,
             { headers: { "Content-type": "application/json" } }
         )
     }

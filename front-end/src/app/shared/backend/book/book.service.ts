@@ -12,14 +12,6 @@ export class BookService {
 
     constructor(private crudBackendService: CrudBackendService) { }
 
-    create(model: Book): Promise<void> {
-        throw new Error('Method not implemented.');
-    }
-
-    delete(id: string): Promise<void> {
-        throw new Error('Method not implemented.');
-    }
-
     read(id: any): Observable<Book | undefined> {
         return this.crudBackendService.read<Book>(this.controllerPath, id);
     }
@@ -28,7 +20,4 @@ export class BookService {
         return this.crudBackendService.readAll<Book>(this.controllerPath);
     }
 
-    update(model: Book): Promise<void> {
-        throw new Error('Method not implemented.');
-    }
 }
