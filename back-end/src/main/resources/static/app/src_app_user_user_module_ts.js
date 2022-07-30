@@ -215,7 +215,8 @@ function LoginPageComponent_app_alert_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("canClose", true)("message", ctx_r0.errorMessage)("type", "error");
 } }
 class LoginPageComponent {
-    constructor(formBuilder, router, userService, validator) {
+    constructor(activatedRoute, formBuilder, router, userService, validator) {
+        this.activatedRoute = activatedRoute;
         this.router = router;
         this.userService = userService;
         this.errorMessage = "";
@@ -225,10 +226,13 @@ class LoginPageComponent {
             username: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl("", validator.username)
         });
     }
+    get returnToQueryParam() {
+        return this.activatedRoute.snapshot.queryParams["return-to"];
+    }
     login() {
         this.userService.login(this.form.value)
             .then(x => {
-            this.router.navigateByUrl("/");
+            this.router.navigateByUrl(this.returnToQueryParam ?? "/");
         })
             .catch((x) => {
             this.errorMessage = x.error.data;
@@ -236,7 +240,7 @@ class LoginPageComponent {
         });
     }
 }
-LoginPageComponent.ɵfac = function LoginPageComponent_Factory(t) { return new (t || LoginPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_backend_user_user_service__WEBPACK_IMPORTED_MODULE_1__.UserService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_login_page_validator__WEBPACK_IMPORTED_MODULE_0__["default"])); };
+LoginPageComponent.ɵfac = function LoginPageComponent_Factory(t) { return new (t || LoginPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_backend_user_user_service__WEBPACK_IMPORTED_MODULE_1__.UserService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_login_page_validator__WEBPACK_IMPORTED_MODULE_0__["default"])); };
 LoginPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: LoginPageComponent, selectors: [["app-login-page"]], decls: 13, vars: 11, consts: [[3, "canClose", "message", "type", "close", 4, "ngIf"], [3, "formGroup", "noValidate"], ["formControlName", "username", 3, "abstractControl", "label"], ["formControlName", "password", 3, "abstractControl", "label", "type"], [1, "form-buttons"], [3, "disabled", "label", "click"], [1, "form-buttons__forgot-password", 3, "routerLink"], [1, "create-account", "text-preset-450"], [1, "create-account__create-one", "text-preset-470", 3, "routerLink"], [3, "canClose", "message", "type", "close"]], template: function LoginPageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "app-logo");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, LoginPageComponent_app_alert_1_Template, 1, 3, "app-alert", 0);

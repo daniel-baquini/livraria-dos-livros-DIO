@@ -194,10 +194,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cart_page_cart_page_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cart-page/cart-page.component */ 7350);
 /* harmony import */ var _delivery_address_page_delivery_address_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./delivery-address-page/delivery-address-page.component */ 9891);
 /* harmony import */ var _payment_method_page_payment_method_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./payment-method-page/payment-method-page.component */ 594);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/shared.module */ 4466);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 2508);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var _user_is_authenticated_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../user/is-authenticated.guard */ 906);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 
@@ -214,24 +216,26 @@ const cartRoutes = [
     },
     {
         component: _delivery_address_page_delivery_address_page_component__WEBPACK_IMPORTED_MODULE_2__.DeliveryAddressPageComponent,
+        canActivate: [_user_is_authenticated_guard__WEBPACK_IMPORTED_MODULE_5__.IsAuthenticatedGuard],
         path: "delivery-address"
     },
     {
         component: _payment_method_page_payment_method_page_component__WEBPACK_IMPORTED_MODULE_3__.PaymentMethodPageComponent,
+        canActivate: [_user_is_authenticated_guard__WEBPACK_IMPORTED_MODULE_5__.IsAuthenticatedGuard],
         path: "payment-method"
     }
 ];
 class CartModule {
 }
 CartModule.ɵfac = function CartModule_Factory(t) { return new (t || CartModule)(); };
-CartModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: CartModule });
-CartModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.ReactiveFormsModule,
-        _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule.forChild(cartRoutes),
+CartModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: CartModule });
+CartModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.ReactiveFormsModule,
+        _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule.forChild(cartRoutes),
         _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__.SharedModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵsetNgModuleScope"](CartModule, { declarations: [_cart_item_cart_item_component__WEBPACK_IMPORTED_MODULE_0__.CartItemComponent,
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](CartModule, { declarations: [_cart_item_cart_item_component__WEBPACK_IMPORTED_MODULE_0__.CartItemComponent,
         _cart_page_cart_page_component__WEBPACK_IMPORTED_MODULE_1__.CartPageComponent,
         _delivery_address_page_delivery_address_page_component__WEBPACK_IMPORTED_MODULE_2__.DeliveryAddressPageComponent,
-        _payment_method_page_payment_method_page_component__WEBPACK_IMPORTED_MODULE_3__.PaymentMethodPageComponent], imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.ReactiveFormsModule, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule, _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__.SharedModule] }); })();
+        _payment_method_page_payment_method_page_component__WEBPACK_IMPORTED_MODULE_3__.PaymentMethodPageComponent], imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.ReactiveFormsModule, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule, _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__.SharedModule] }); })();
 
 
 /***/ }),
@@ -479,6 +483,45 @@ PaymentMethodPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.showEndOfDemoModal);
     } }, dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__.ButtonComponent, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_2__.DefaultPageComponent, _shared_components_modal_modal_component__WEBPACK_IMPORTED_MODULE_3__.ModalComponent], styles: ["[_nghost-%COMP%] {\n    display: contents;\n}\n\napp-alert[_ngcontent-%COMP%], .payment-options[_ngcontent-%COMP%], .buttons-row[_ngcontent-%COMP%] {\n    max-width: 800px;\n    width: 100%;\n}\n\n.payment-options[_ngcontent-%COMP%] {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    gap: 16px;\n}\n\n.payment-options__option[_ngcontent-%COMP%] {\n    background-color: var(--c-white-30);\n    border-radius: 4px;\n    color: var(--c-dark-80);\n    cursor: pointer;\n    padding: 20px 12px;\n    width: 100%;\n}\n\n.payment-options__option--active[_ngcontent-%COMP%] {\n    background-color: transparent;\n    border: 1px solid var(--c-primary-60);\n}\n\n.buttons-row[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    justify-content: flex-end;\n    max-width: 800px;\n    width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBheW1lbnQtbWV0aG9kLXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsT0FBTztJQUNQLHNCQUFzQjtJQUN0QixTQUFTO0FBQ2I7O0FBRUE7SUFDSSxtQ0FBbUM7SUFDbkMsa0JBQWtCO0lBQ2xCLHVCQUF1QjtJQUN2QixlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLFdBQVc7QUFDZjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixxQ0FBcUM7QUFDekM7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLFFBQVE7SUFDUix5QkFBeUI7SUFDekIsZ0JBQWdCO0lBQ2hCLFdBQVc7QUFDZiIsImZpbGUiOiJwYXltZW50LW1ldGhvZC1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgZGlzcGxheTogY29udGVudHM7XG59XG5cbmFwcC1hbGVydCwgLnBheW1lbnQtb3B0aW9ucywgLmJ1dHRvbnMtcm93IHtcbiAgICBtYXgtd2lkdGg6IDgwMHB4O1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4ucGF5bWVudC1vcHRpb25zIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXg6IDE7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBnYXA6IDE2cHg7XG59XG5cbi5wYXltZW50LW9wdGlvbnNfX29wdGlvbiB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYy13aGl0ZS0zMCk7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgIGNvbG9yOiB2YXIoLS1jLWRhcmstODApO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwYWRkaW5nOiAyMHB4IDEycHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5wYXltZW50LW9wdGlvbnNfX29wdGlvbi0tYWN0aXZlIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1jLXByaW1hcnktNjApO1xufVxuXG4uYnV0dG9ucy1yb3cge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBnYXA6IDhweDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59Il19 */"] });
+
+
+/***/ }),
+
+/***/ 906:
+/*!************************************************!*\
+  !*** ./src/app/user/is-authenticated.guard.ts ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "IsAuthenticatedGuard": () => (/* binding */ IsAuthenticatedGuard)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _shared_backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shared/backend/user/user.service */ 4150);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 124);
+
+
+
+class IsAuthenticatedGuard {
+    constructor(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    canActivate(route, state) {
+        if (!this.userService.isAuthenticated) {
+            this.router.navigate(["/user"], {
+                queryParams: {
+                    "return-to": route.pathFromRoot.map(v => v.url.map(segment => segment.toString()).join('/')).join('/')
+                }
+            });
+            return false;
+        }
+        return true;
+    }
+}
+IsAuthenticatedGuard.ɵfac = function IsAuthenticatedGuard_Factory(t) { return new (t || IsAuthenticatedGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_shared_backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__.UserService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router)); };
+IsAuthenticatedGuard.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: IsAuthenticatedGuard, factory: IsAuthenticatedGuard.ɵfac, providedIn: 'root' });
 
 
 /***/ })

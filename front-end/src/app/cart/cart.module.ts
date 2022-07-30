@@ -6,6 +6,7 @@ import { PaymentMethodPageComponent } from './payment-method-page/payment-method
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IsAuthenticatedGuard } from '../user/is-authenticated.guard';
 
 const cartRoutes: Routes = [
     {
@@ -14,10 +15,12 @@ const cartRoutes: Routes = [
     },
     {
         component: DeliveryAddressPageComponent,
+        canActivate: [IsAuthenticatedGuard],
         path: "delivery-address"
     },
     {
         component: PaymentMethodPageComponent,
+        canActivate: [IsAuthenticatedGuard],
         path: "payment-method"
     }
 ];
