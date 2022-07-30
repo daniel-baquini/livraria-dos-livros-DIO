@@ -17,6 +17,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.backend.config.JWTConfiguration;
 import com.backend.model.JWTObject;
+import com.backend.model.http.ApiReturn;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
@@ -51,9 +53,18 @@ public class JWTFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         }
         catch(ExpiredJwtException | UnsupportedJwtException | MalformedJwtException | SignatureException e) {
-            // TODO: see if it's possible to return a body, containing the description of the error.
+            ObjectMapper objectMapper = new ObjectMapper();
+
             e.printStackTrace();
-            response.setStatus(HttpStatus.FORBIDDEN.value());
+            response.resetBuffer();
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            response.setHeader("Content-Type", "application/json");
+            response.getOutputStream().print(
+                objectMapper.writeValueAsString(
+                    new ApiReturn<String>("Invalid jwt token", true)
+                )
+            );
+            response.flushBuffer();
             return;
         }
     }

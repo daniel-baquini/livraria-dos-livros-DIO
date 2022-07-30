@@ -197,7 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/shared.module */ 4466);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 2508);
-/* harmony import */ var _user_is_authenticated_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../user/is-authenticated.guard */ 906);
+/* harmony import */ var _user_is_authenticated_guard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../user/is-authenticated.guard */ 6906);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
 
 
@@ -407,7 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _cart_management_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cart-management.service */ 5971);
-/* harmony import */ var src_app_shared_backend_cart_cart_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/backend/cart/cart.service */ 914);
+/* harmony import */ var src_app_shared_backend_cart_cart_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/backend/cart/cart.service */ 8914);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _shared_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/components/alert/alert.component */ 8332);
 /* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/components/button/button.component */ 42);
@@ -518,7 +518,7 @@ PaymentMethodPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED
 
 /***/ }),
 
-/***/ 914:
+/***/ 8914:
 /*!*****************************************************!*\
   !*** ./src/app/shared/backend/cart/cart.service.ts ***!
   \*****************************************************/
@@ -552,7 +552,7 @@ CartService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["�
 
 /***/ }),
 
-/***/ 906:
+/***/ 6906:
 /*!************************************************!*\
   !*** ./src/app/user/is-authenticated.guard.ts ***!
   \************************************************/

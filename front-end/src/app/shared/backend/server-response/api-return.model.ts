@@ -1,5 +1,6 @@
 interface ApiReturn<T> {
-    data: T
+    data: T,
+    invalidJwt: boolean
 }
 
 export default ApiReturn

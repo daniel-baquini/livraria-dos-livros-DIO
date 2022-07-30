@@ -89,7 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/shared.module */ 4466);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 8987);
-/* harmony import */ var _shared_interceptors_token_interceptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/interceptors/token.interceptor */ 970);
+/* harmony import */ var _shared_interceptors_token_interceptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/interceptors/token.interceptor */ 3970);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
 
 
@@ -859,7 +859,7 @@ SmallButtonComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 970:
+/***/ 3970:
 /*!**********************************************************!*\
   !*** ./src/app/shared/interceptors/token.interceptor.ts ***!
   \**********************************************************/
@@ -869,24 +869,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TokenInterceptor": () => (/* binding */ TokenInterceptor)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 3158);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 504);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../backend/user/user.service */ 4150);
 
 
+
 class TokenInterceptor {
-    constructor(loginService) {
-        this.loginService = loginService;
+    constructor(userService) {
+        this.userService = userService;
     }
     intercept(request, next) {
         return next.handle(request.clone({
             setHeaders: {
-                "x-api-key": this.loginService.authData.token ?? ""
+                "x-api-key": this.userService.authData.token ?? ""
             }
-        }));
+        })).pipe(
+        // When jwt is invalid, will logout user and try again
+        (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.catchError)((error) => {
+            if (error.error.invalidJwt) {
+                this.userService.logOut();
+            }
+            request = request.clone({ setHeaders: { "x-api-key": "" } });
+            return next.handle(request);
+        }), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.retry)(1));
     }
 }
-TokenInterceptor.ɵfac = function TokenInterceptor_Factory(t) { return new (t || TokenInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__.UserService)); };
-TokenInterceptor.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: TokenInterceptor, factory: TokenInterceptor.ɵfac });
+TokenInterceptor.ɵfac = function TokenInterceptor_Factory(t) { return new (t || TokenInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__.UserService)); };
+TokenInterceptor.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: TokenInterceptor, factory: TokenInterceptor.ɵfac });
 
 
 /***/ }),
