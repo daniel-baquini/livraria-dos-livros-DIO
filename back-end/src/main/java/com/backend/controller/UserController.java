@@ -17,6 +17,7 @@ import com.backend.entity.User;
 import com.backend.model.ForgotPassword;
 import com.backend.model.JWTObject;
 import com.backend.model.Login;
+import com.backend.model.UserPublicData;
 import com.backend.model.exception.DomainException;
 import com.backend.model.http.ApiReturn;
 import com.backend.model.http.LoginReturn;
@@ -106,7 +107,12 @@ public class UserController {
                 this.objectMapper.writeValueAsString(
                     new ApiReturn<LoginReturn>(
                         new LoginReturn(
-                            JWTCreator.create(JWTConfiguration.PREFIX, JWTConfiguration.KEY, jwtObject)
+                            JWTCreator.create(JWTConfiguration.PREFIX, JWTConfiguration.KEY, jwtObject),
+                            new UserPublicData(
+                                user.getName(),
+                                user.getSurname(),
+                                user.getRoles()
+                            )
                         )
                     )
                 )
