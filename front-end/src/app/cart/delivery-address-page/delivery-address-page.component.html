@@ -1,30 +1,64 @@
 <app-default-page>
     <span class="page-title text-preset-650">Endereço de entrega</span>
-    <form class="grid" [noValidate]="">
+    <form class="grid" [formGroup]="this.form" [noValidate]="">
         <div class="col-2">
-            <app-field [label]="'CPF (Opcional)'"></app-field>
+            <app-field
+                [abstractControl]="this.form.controls['CEP']"
+                formControlName="CEP"
+                [label]="'CEP (Opcional)'"
+            ></app-field>
         </div>
         <div class="col-6">
-            <app-field [label]="'Logradouro'"></app-field>
+            <app-field
+                [abstractControl]="this.form.controls['street']"
+                formControlName="street"
+                [label]="'Logradouro'"
+            ></app-field>
         </div>
         <div class="col-2">
-            <app-field [label]="'Número'"></app-field>
+            <app-field
+                [abstractControl]="this.form.controls['number']"
+                formControlName="number"
+                [label]="'Número'"
+                [type]="'number'"
+            ></app-field>
         </div>
         <div class="col-6">
-            <app-field [label]="'Bairro'"></app-field>
+            <app-field
+                [abstractControl]="this.form.controls['district']"
+                formControlName="district"
+                [label]="'Bairro'"
+            ></app-field>
         </div>
         <div class="col-4">
-            <app-field [label]="'Cidade'"></app-field>
+            <app-field
+                [abstractControl]="this.form.controls['city']"
+                formControlName="city"
+                [label]="'Cidade'"
+            ></app-field>
         </div>
         <div class="col-4">
-            <app-field [label]="'Estado'"></app-field>
+            <app-field
+                [abstractControl]="this.form.controls['state']"
+                formControlName="state"
+                [label]="'Estado'"
+            ></app-field>
         </div>
         <div class="col-8">
-            <app-field [label]="'Complemento (Opcional)'"></app-field>
+            <app-field
+                [abstractControl]="this.form.controls['supplement']"
+                formControlName="supplement"
+                [label]="'Complemento (Opcional)'"
+            ></app-field>
         </div>
     </form>
     <div class="buttons-row">
         <app-button [label]="'Voltar'" [routerLink]="'/cart'" [type]="'secondary'"></app-button>
-        <app-button [label]="'Forma de pagamento'" [type]="'primary'"></app-button>
+        <app-button
+            (btnClick)="this.goToPaymentMethod()"
+            [disabled]="this.form.invalid"
+            [label]="'Forma de pagamento'"
+            [type]="'primary'"
+        ></app-button>
     </div>
 </app-default-page>

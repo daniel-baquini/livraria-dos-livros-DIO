@@ -1,30 +1,57 @@
 import { AbstractControl, ValidationErrors } from "@angular/forms";
 import { Injectable } from "@angular/core";
 
+
 @Injectable({
     providedIn: "root"
 })
 class DeliveryAddressPageValidator {
 
-    password(control: AbstractControl): null | ValidationErrors {
+    street(control: AbstractControl): null | ValidationErrors {
         const value = `${control.value ?? ""}`.trim();
 
         if(value.length === 0) {
-            return { "password": "Necessário fornecer uma senha" }
+            return { "street": "Necessário fornecer um logradouro" }
         }
 
         return null;
     }
 
-    username(control: AbstractControl): null | ValidationErrors {
-        const value = `${control.value ?? ""}`.trim()
+    number(control: AbstractControl): null | ValidationErrors {
+        const value = `${control.value ?? ""}`.trim();
 
         if(value.length === 0) {
-            return { email: "Necessário fornecer um email" }
+            return { "number": "Necessário fornecer um número " }
         }
 
-        if(!(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value))) {
-            return { 'email': "Formato de e-mail inválido." };
+        return null;
+    }
+
+    district(control: AbstractControl): null | ValidationErrors {
+        const value = `${control.value ?? ""}`.trim();
+
+        if(value.length === 0) {
+            return { "district": "Necessário fornecer um bairro" }
+        }
+
+        return null;
+    }
+
+    city(control: AbstractControl): null | ValidationErrors {
+        const value = `${control.value ?? ""}`.trim();
+
+        if(value.length === 0) {
+            return { "city": "Necessário fornecer uma cidade" }
+        }
+
+        return null;
+    }
+
+    state(control: AbstractControl): null | ValidationErrors {
+        const value = `${control.value ?? ""}`.trim();
+
+        if(value.length === 0) {
+            return { "state": "Necessário fornecer um estado" }
         }
 
         return null;

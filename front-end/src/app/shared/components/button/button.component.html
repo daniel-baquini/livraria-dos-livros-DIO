@@ -1,11 +1,11 @@
-<button class="primary-button" [disabled]="this.disabled" *ngIf="this.type === 'primary'">
+<button class="primary-button" (click)="this.onBtnClick()" [disabled]="this.disabled" *ngIf="this.type === 'primary'">
     <span class="text-preset-420">{{this.label}}</span>
 </button>
 
-<button class="search-button" [disabled]="this.disabled" *ngIf="this.type === 'search'">
+<button class="search-button" (click)="this.onBtnClick()" [disabled]="this.disabled" *ngIf="this.type === 'search'">
     <span class="icon-search"></span>
 </button>
 
-<button class="secondary-button" [disabled]="this.disabled" *ngIf="this.type === 'secondary'">
+<button class="secondary-button" (click)="this.onBtnClick()" [disabled]="this.disabled" *ngIf="this.type === 'secondary'">
     <span class="text-preset-420">{{this.label}}</span>
 </button>

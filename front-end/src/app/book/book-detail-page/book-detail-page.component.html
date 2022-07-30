@@ -26,8 +26,8 @@
                     <span class="book-data__installment text-preset-350">ou até 4x de R$ 17,50 sem juros - <span class="installment__link" (click)="this.toggleShowInstallmentModal()">Ver parcelamento</span></span>
                 </div>
                 <div class="book-buy-or-add-to-cart" *ngIf="!this.isItemOnCart">
-                    <app-button (click)="this.buyNow()" [label]="'Comprar'"></app-button>
-                    <app-button (click)="this.addToCart()" [label]="'Adicionar ao carrinho'" [type]="'secondary'"></app-button>
+                    <app-button (btnClick)="this.buyNow()" [label]="'Comprar'"></app-button>
+                    <app-button (btnClick)="this.addToCart()" [label]="'Adicionar ao carrinho'" [type]="'secondary'"></app-button>
                 </div>
                 <div class="book-added-to-cart" *ngIf="this.isItemOnCart">
                     <span class="icon-check"></span>

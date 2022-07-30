@@ -163,6 +163,10 @@ class CartManagementService {
         this.cart.push(new _cart_item_cart_item_model__WEBPACK_IMPORTED_MODULE_0__["default"](book, 1));
         this.updateLocalStorage();
     }
+    clear() {
+        this.cart = [];
+        this.updateLocalStorage();
+    }
     decrementItem(bookId) {
         const cartItemToDecrement = this.cart.find(x => x.book.id === bookId);
         if (!cartItemToDecrement)
@@ -406,8 +410,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 4666);
 
 
+
 function ButtonComponent_button_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 3)(1, "span", 4);
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonComponent_button_0_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.onBtnClick()); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
 } if (rf & 2) {
@@ -417,7 +425,9 @@ function ButtonComponent_button_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.label);
 } }
 function ButtonComponent_button_1_Template(rf, ctx) { if (rf & 1) {
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonComponent_button_1_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r5.onBtnClick()); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "span", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -425,7 +435,10 @@ function ButtonComponent_button_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r1.disabled);
 } }
 function ButtonComponent_button_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7)(1, "span", 4);
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonComponent_button_2_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r7.onBtnClick()); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
 } if (rf & 2) {
@@ -439,18 +452,16 @@ class ButtonComponent {
         this.disabled = false;
         this.label = "";
         this.type = "primary";
+        this.btnClick = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
     }
-    onHostClick(event) {
-        if (this.disabled) {
-            event.stopPropagation();
-            return;
+    onBtnClick() {
+        if (!this.disabled) {
+            this.btnClick.emit();
         }
     }
 }
 ButtonComponent.ɵfac = function ButtonComponent_Factory(t) { return new (t || ButtonComponent)(); };
-ButtonComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonComponent, selectors: [["app-button"]], hostBindings: function ButtonComponent_HostBindings(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ButtonComponent_click_HostBindingHandler($event) { return ctx.onHostClick($event); });
-    } }, inputs: { disabled: "disabled", label: "label", type: "type" }, decls: 3, vars: 3, consts: [["class", "primary-button", 3, "disabled", 4, "ngIf"], ["class", "search-button", 3, "disabled", 4, "ngIf"], ["class", "secondary-button", 3, "disabled", 4, "ngIf"], [1, "primary-button", 3, "disabled"], [1, "text-preset-420"], [1, "search-button", 3, "disabled"], [1, "icon-search"], [1, "secondary-button", 3, "disabled"]], template: function ButtonComponent_Template(rf, ctx) { if (rf & 1) {
+ButtonComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonComponent, selectors: [["app-button"]], inputs: { disabled: "disabled", label: "label", type: "type" }, outputs: { btnClick: "btnClick" }, decls: 3, vars: 3, consts: [["class", "primary-button", 3, "disabled", "click", 4, "ngIf"], ["class", "search-button", 3, "disabled", "click", 4, "ngIf"], ["class", "secondary-button", 3, "disabled", "click", 4, "ngIf"], [1, "primary-button", 3, "disabled", "click"], [1, "text-preset-420"], [1, "search-button", 3, "disabled", "click"], [1, "icon-search"], [1, "secondary-button", 3, "disabled", "click"]], template: function ButtonComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ButtonComponent_button_0_Template, 3, 2, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ButtonComponent_button_1_Template, 2, 1, "button", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ButtonComponent_button_2_Template, 3, 2, "button", 2);

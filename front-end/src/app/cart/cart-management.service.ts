@@ -25,6 +25,11 @@ export class CartManagementService {
         this.updateLocalStorage();
     }
 
+    clear(): void {
+        this.cart = [];
+        this.updateLocalStorage();
+    }
+
     decrementItem(bookId: number): void {
         const cartItemToDecrement: CartItem | undefined = this.cart.find(x => x.book.id === bookId);
         if(!cartItemToDecrement) return

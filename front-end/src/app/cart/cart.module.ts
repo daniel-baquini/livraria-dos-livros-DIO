@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { PaymentMethodPageComponent } from './payment-method-page/payment-method-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const cartRoutes: Routes = [
     {
@@ -29,6 +30,7 @@ const cartRoutes: Routes = [
         PaymentMethodPageComponent
     ],
     imports: [
+        ReactiveFormsModule,
         RouterModule.forChild(cartRoutes),
         SharedModule
     ]
