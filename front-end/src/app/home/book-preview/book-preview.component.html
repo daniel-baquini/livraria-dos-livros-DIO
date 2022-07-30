@@ -8,5 +8,6 @@
             <span class="book-data__author text-preset-350">{{this.book.author}}</span>
         </div>
         <span class="book-data__price text-preset-430">R$ {{this.priceInReal}}<span class="text-preset-230">,{{this.priceInCentavos}}</span></span>
+        <span class="book-data__out-of-stock text-preset-350" *ngIf="this.book.quantity === 0">Fora de estoque</span>
     </div>
 </ng-container>

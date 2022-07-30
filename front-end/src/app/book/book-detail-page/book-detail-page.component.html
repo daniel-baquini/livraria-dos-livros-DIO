@@ -11,18 +11,16 @@
                         <span class="book-data__author text-preset-350">Por: {{this.book.author}}</span>
                     </div>
                 </div>
-                <div class="book-data__price-and-installment">
-                    <span class="book-data__price text-preset-430">R$ {{this.priceInReal}}<span class="text-preset-230">,{{this.priceInCentavos}}</span></span>
-                    <span class="book-data__installment text-preset-350">ou até 4x de R$ 17,50 sem juros - <span class="installment__link" (click)="this.toggleShowInstallmentModal()">Ver parcelamento</span></span>
-                </div>
-                <div class="book-buy-or-add-to-cart" *ngIf="!this.isItemOnCart">
+                <span class="book-data__price text-preset-430">R$ {{this.priceInReal}}<span class="text-preset-230">,{{this.priceInCentavos}}</span></span>
+                <div class="book-buy-or-add-to-cart" *ngIf="!this.isItemOnCart && this.book.quantity > 0">
                     <app-button (btnClick)="this.buyNow()" [label]="'Comprar'"></app-button>
                     <app-button (btnClick)="this.addToCart()" [label]="'Adicionar ao carrinho'" [type]="'secondary'"></app-button>
                 </div>
-                <div class="book-added-to-cart" *ngIf="this.isItemOnCart">
+                <div class="book-added-to-cart" *ngIf="this.isItemOnCart && this.book.quantity > 0">
                     <span class="icon-check"></span>
                     <span class="book-added-to-cart__label">Adicionado ao carrinho</span>
                 </div>
+                <span class="book-data__out-of-stock text-preset-350" *ngIf="this.book.quantity === 0">Fora de estoque</span>
             </div>
         </div>
         <div class="book-synopsis">
@@ -31,34 +29,3 @@
         </div>
     </ng-container>
 </app-default-page>
-<app-modal
-    (closeButtonClick)="this.toggleShowInstallmentModal()"
-    [closeButtonLabel]="'Entendido'"
-    *ngIf="this.showInstallmentModal"
-    [title]="'Opções de parcelamento'"
->
-    <table class="table">
-        <tbody>
-            <tr>
-                <td>1x sem juros</td>
-                <td class="price-cell">{{ 70 | currency }}</td>
-            </tr>
-            <tr>
-                <td>2x sem juros</td>
-                <td class="price-cell">{{ 35 | currency }}</td>
-            </tr>
-            <tr>
-                <td>3x sem juros</td>
-                <td class="price-cell">{{ 23.34 | currency }}</td>
-            </tr>
-            <tr>
-                <td>4x sem juros</td>
-                <td class="price-cell">{{ 17.5 | currency }}</td>
-            </tr>
-            <tr>
-                <td>5x com juros (2% ao mês)</td>
-                <td class="price-cell">{{ 14.28 | currency }}</td>
-            </tr>
-        </tbody>
-    </table>
-</app-modal>

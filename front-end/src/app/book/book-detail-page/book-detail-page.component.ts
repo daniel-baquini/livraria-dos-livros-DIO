@@ -12,7 +12,6 @@ import { BookService } from 'src/app/shared/backend/book/book.service';
 export class BookDetailPageComponent {
 
     book: Book | undefined;
-    showInstallmentModal: boolean = false;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -57,10 +56,6 @@ export class BookDetailPageComponent {
     buyNow(): void {
         this.addToCart();
         this.router.navigateByUrl("/cart");
-    }
-
-    toggleShowInstallmentModal(): void {
-        this.showInstallmentModal = !this.showInstallmentModal;
     }
 
 }

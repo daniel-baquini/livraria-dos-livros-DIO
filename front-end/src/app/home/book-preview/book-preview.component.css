@@ -50,3 +50,7 @@
 .book-data__price {
     color: var(--c-dark-80);
 }
+
+.book-data__out-of-stock {
+    color: var(--c-red-60);
+}

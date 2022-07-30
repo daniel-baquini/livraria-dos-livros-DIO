@@ -51,27 +51,8 @@
     color: var(--c-dark-60);
 }
 
-.book-data__price-and-installment {
-    display: flex;
-    flex-direction: column;
-}
-
 .book-data__price {
     color: var(--c-dark-80);
-}
-
-.book-data__installment {
-    color: var(--c-dark-60);
-}
-
-.installment__link {
-    color: var(--c-primary-60);
-    cursor: pointer;
-    transition: 250ms;
-}
-
-.installment__link:hover {
-    color: var(--c-primary-80);
 }
 
 .book-buy-or-add-to-cart {
@@ -94,6 +75,10 @@
 
 .book-added-to-cart__label {
     color: var(--c-dark-60);
+}
+
+.book-data__out-of-stock {
+    color: var(--c-red-60);
 }
 
 .book-synopsis {
