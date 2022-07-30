@@ -97,6 +97,7 @@ public class UserController {
             }
 
             JWTObject jwtObject = new JWTObject();
+            jwtObject.setSubject(user.getUsername());
             jwtObject.setIssuedAt(new Date(System.currentTimeMillis()));
             jwtObject.setExpiration(new Date(System.currentTimeMillis() + JWTConfiguration.EXPIRATION));
             jwtObject.setRoles(user.getRoles());
