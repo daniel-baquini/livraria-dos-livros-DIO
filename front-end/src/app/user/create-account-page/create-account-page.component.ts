@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import CreateAccountPageValidator from './create-account-page.validator';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { UserService } from 'src/app/shared/backend/user/user.service';
+import { Router } from '@angular/router';
+import JavaErrorResponse from 'src/app/shared/backend/server-response/java-error-response.model';
 
 @Component({
     selector: 'app-create-account-page',
@@ -10,10 +12,13 @@ import { UserService } from 'src/app/shared/backend/user/user.service';
 })
 export class CreateAccountPageComponent {
 
+    errorMessage: string = "";
     form: FormGroup;
+    showAlert: boolean = false;
 
     constructor(
         formBuilder: FormBuilder,
+        private router: Router,
         private userService: UserService,
         validator: CreateAccountPageValidator
     ) {
@@ -26,8 +31,14 @@ export class CreateAccountPageComponent {
     }
 
     createAccount(): void {
-        this.userService.create(this.form.value).subscribe(x => {
-            console.log(x);
+        this.userService.create(this.form.value).subscribe({
+            error: ((x: JavaErrorResponse<string>) => {
+                this.errorMessage = x.error.data;
+                this.showAlert = true;
+            }),
+            next: value => {
+                this.router.navigateByUrl("/user");
+            }
         });
     }
 

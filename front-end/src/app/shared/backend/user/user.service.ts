@@ -54,7 +54,7 @@ export class UserService {
     private set userPublicData(value: undefined | UserPublicData) {
         this.authData.userPublicData = value;
 
-        value === null ?
+        value === undefined ?
             localStorage.removeItem("userPublicData") :
             localStorage.setItem("userPublicData", JSON.stringify(value));
     }

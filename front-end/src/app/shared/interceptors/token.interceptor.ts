@@ -1,33 +1,47 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, Observable, pipe, retry } from "rxjs";
-import ApiReturn from "../backend/server-response/api-return.model";
+import { Router } from "@angular/router";
+import { BehaviorSubject, catchError, Observable, switchMap, take, throwError } from "rxjs";
 import JavaErrorResponse from "../backend/server-response/java-error-response.model";
+
 import { UserService } from "../backend/user/user.service";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-
-    constructor(private userService: UserService) {}
-
+    
+    constructor(private router: Router, private userService: UserService) {}
+    
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-        return next.handle(
-            request.clone({
-                setHeaders: {
-                    "x-api-key": this.userService.authData.token ?? ""
-                }
-            })
-        ).pipe(
-            // When jwt is invalid, will logout user and try again
-            catchError((error: JavaErrorResponse<ApiReturn<string>>) => {
-                if(error.error.invalidJwt) {
+        const authRequest = request.clone({ setHeaders: { "x-api-key": this.userService.authData.token ?? "" }});
+
+        return next.handle(authRequest)
+        .pipe(
+            catchError((error: JavaErrorResponse<string>) => {
+                if((error.error && error.error.invalidJwt) || error.status === 401) {
+                    const retrySubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+                    
                     this.userService.logOut();
+                    return retrySubject.pipe(
+                        take(1),
+                        switchMap(x => next.handle(
+                            request.clone({ setHeaders: { "x-api-key": "" }})
+                        )),
+                        // from now on, all authentication/authorization errors are because
+                        // we are not loggedin, so, we just move to login page
+                        catchError((x: JavaErrorResponse<string>) => {
+                            if(x.status >= 400) {
+                                this.router.navigateByUrl("/user")
+                            }
+
+                            return throwError(x);
+                        })
+                    );
                 }
 
-                request = request.clone({ setHeaders: { "x-api-key": ""}})
-                return next.handle(request);
-            }),
-            retry(1)
+                return throwError(error);
+            })
         );
     }
+
 }
+    

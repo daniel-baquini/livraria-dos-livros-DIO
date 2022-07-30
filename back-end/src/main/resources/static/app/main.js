@@ -264,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UserService": () => (/* binding */ UserService)
 /* harmony export */ });
-/* harmony import */ var _media_danielbaquini_42F69340F69332E1_Projetos_pessoais_livraria_dos_livros_DIO_front_end_front_end_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
+/* harmony import */ var _media_danielbaquini_42F69340F69332E1_Projetos_pessoais_livraria_dos_livros_DIO_front_end_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 1670);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _crud_backend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../crud-backend.service */ 8811);
@@ -310,7 +310,7 @@ class UserService {
 
   set userPublicData(value) {
     this.authData.userPublicData = value;
-    value === null ? localStorage.removeItem("userPublicData") : localStorage.setItem("userPublicData", JSON.stringify(value));
+    value === undefined ? localStorage.removeItem("userPublicData") : localStorage.setItem("userPublicData", JSON.stringify(value));
   }
 
   create(model) {
@@ -320,7 +320,7 @@ class UserService {
   login(login) {
     var _this = this;
 
-    return (0,_media_danielbaquini_42F69340F69332E1_Projetos_pessoais_livraria_dos_livros_DIO_front_end_front_end_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_media_danielbaquini_42F69340F69332E1_Projetos_pessoais_livraria_dos_livros_DIO_front_end_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return new Promise((resolve, reject) => {
         _this.defaultHttpService.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.backendUrl}/api/${_this.controllerPath}/login`, login).subscribe({
           error: err => reject(err),
@@ -870,34 +870,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "TokenInterceptor": () => (/* binding */ TokenInterceptor)
 /* harmony export */ });
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 3158);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 504);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6317);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 9295);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 2673);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 5474);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../backend/user/user.service */ 4150);
 
 
 
+
 class TokenInterceptor {
-    constructor(userService) {
+    constructor(router, userService) {
+        this.router = router;
         this.userService = userService;
     }
     intercept(request, next) {
-        return next.handle(request.clone({
-            setHeaders: {
-                "x-api-key": this.userService.authData.token ?? ""
-            }
-        })).pipe(
-        // When jwt is invalid, will logout user and try again
-        (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.catchError)((error) => {
-            if (error.error.invalidJwt) {
+        const authRequest = request.clone({ setHeaders: { "x-api-key": this.userService.authData.token ?? "" } });
+        return next.handle(authRequest)
+            .pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_1__.catchError)((error) => {
+            if ((error.error && error.error.invalidJwt) || error.status === 401) {
+                const retrySubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(null);
                 this.userService.logOut();
+                return retrySubject.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.take)(1), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.switchMap)(x => next.handle(request.clone({ setHeaders: { "x-api-key": "" } }))), 
+                // from now on, all authentication/authorization errors are because
+                // we are not loggedin, so, we just move to login page
+                (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.catchError)((x) => {
+                    if (x.status >= 400) {
+                        this.router.navigateByUrl("/user");
+                    }
+                    return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(x);
+                }));
             }
-            request = request.clone({ setHeaders: { "x-api-key": "" } });
-            return next.handle(request);
-        }), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.retry)(1));
+            return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(error);
+        }));
     }
 }
-TokenInterceptor.ɵfac = function TokenInterceptor_Factory(t) { return new (t || TokenInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__.UserService)); };
-TokenInterceptor.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: TokenInterceptor, factory: TokenInterceptor.ɵfac });
+TokenInterceptor.ɵfac = function TokenInterceptor_Factory(t) { return new (t || TokenInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_backend_user_user_service__WEBPACK_IMPORTED_MODULE_0__.UserService)); };
+TokenInterceptor.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({ token: TokenInterceptor, factory: TokenInterceptor.ɵfac });
 
 
 /***/ }),

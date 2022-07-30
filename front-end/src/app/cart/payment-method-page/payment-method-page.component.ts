@@ -26,7 +26,6 @@ export class PaymentMethodPageComponent {
     buy(): void {
         this.cartService.buy().subscribe({
             error: (err: JavaErrorResponse<string>) => {
-                console.log(err)
                 this.errorMessage = err.error.data;
                 this.showErrorMessage = true;
             },

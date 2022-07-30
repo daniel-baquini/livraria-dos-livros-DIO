@@ -454,7 +454,6 @@ class PaymentMethodPageComponent {
     buy() {
         this.cartService.buy().subscribe({
             error: (err) => {
-                console.log(err);
                 this.errorMessage = err.error.data;
                 this.showErrorMessage = true;
             },

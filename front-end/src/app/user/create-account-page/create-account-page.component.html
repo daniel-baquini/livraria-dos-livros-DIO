@@ -1,4 +1,11 @@
 <app-logo></app-logo>
+<app-alert
+    [canClose]="true"
+    (close)="this.showAlert = false"
+    [message]="this.errorMessage"
+    *ngIf="this.showAlert"
+    [type]="'error'"
+></app-alert>
 <form [formGroup]="this.form" [noValidate]>
     <app-field
         [abstractControl]="this.form.controls['name']"
