@@ -13,7 +13,11 @@
             [routerLink]="'/book/' + book.id"
         ></app-book-preview>
     </div>
-    <span class="load-more text-preset-470">Carregar mais</span>
+    <span
+        class="load-more text-preset-460"
+        (click)="this.loadMore()"
+        *ngIf="this.canLoadMore"
+    >Carregar mais</span>
 </app-default-page>
 <app-modal
     (closeButtonClick)="this.closeButtonClick()"

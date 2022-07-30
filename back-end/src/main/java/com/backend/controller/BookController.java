@@ -1,7 +1,7 @@
 package com.backend.controller;
 
 import com.backend.entity.Book;
-import com.backend.repository.BookRepository;
+import com.backend.service.BookService;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,18 +19,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
     
     @Autowired
-    private BookRepository bookRepository;
+    private BookService bookService;
 
     @GetMapping("/get/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Book> get(@PathVariable(value = "id") Integer id) {
-        return this.bookRepository.findById(id);
+        return this.bookService.findById(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getAll/{page}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Book> getAll() {
-        return this.bookRepository.findAll();
+    public List<Book> getAll(@PathVariable(value = "page") int page) {
+        return  this.bookService.getAllBooksInStock(page);
     }
 
 }

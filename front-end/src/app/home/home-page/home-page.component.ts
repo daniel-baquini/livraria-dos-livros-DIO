@@ -8,27 +8,34 @@ import { UserPreferencesService } from 'src/app/shared/services/user-preferences
     templateUrl: './home-page.component.html',
     styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
     
     books: Book[] = [];
+    canLoadMore: boolean = false;
+    private readonly _pageSize: number = 6;
 
     constructor(
         private bookService: BookService,
         private userPreferencesService: UserPreferencesService
-    ) { }
-
-    ngOnInit(): void {
-        this.bookService.readAll().subscribe(x => {
-            this.books = x;
-        });
+    ) {
+        this.loadMore();
     }
-    
+
     get showWelcomeModal(): boolean {
         return this.userPreferencesService.userPreferences.showWelcomeModal;
     }
 
     closeButtonClick(): void {
         this.userPreferencesService.setProperty("showWelcomeModal", false);
+    }
+
+    loadMore(): void {
+        this.bookService.readAll(this.books.length/this._pageSize).subscribe(x => {
+            if(x !== undefined) {
+                this.books.push(...x);
+                this.canLoadMore = x.length === 6;
+            }
+        });
     }
 
 }
