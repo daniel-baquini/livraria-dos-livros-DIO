@@ -8,6 +8,8 @@ import { environment } from 'src/environments/environment';
 import LoginReturn from './login-return.model';
 import UserPublicData from './user-public-data.model';
 import AuthData from './auth-data.model';
+import ForgotPassword from 'src/app/user/forgot-password-page/forgot-password.model';
+import ApiReturn from '../server-response/api-return.model';
 
 @Injectable({
     providedIn: 'root'
@@ -61,6 +63,13 @@ export class UserService {
 
     create(model: User): Observable<string> {
         return this.crudBackendService.create<User>(this.controllerPath, model);
+    }
+
+    forgotPassword(forgotPassword: ForgotPassword): Observable<ApiReturn<string>> {
+        return this.defaultHttpService.put(
+            `${environment.backendUrl}/api/${this.controllerPath}/forgot-password`,
+            forgotPassword
+        );
     }
 
     async login(login: Login): Promise<LoginReturn> {

@@ -1,6 +1,13 @@
 <app-logo></app-logo>
 <app-alert
     [canClose]="true"
+    (close)="this.router.navigateByUrl('/user')"
+    [message]="this.successMessageQueryParam"
+    *ngIf="!!this.successMessageQueryParam"
+    [type]="'success'"
+></app-alert>
+<app-alert
+    [canClose]="true"
     (close)="this.showAlert = false"
     [message]="this.errorMessage"
     *ngIf="this.showAlert"

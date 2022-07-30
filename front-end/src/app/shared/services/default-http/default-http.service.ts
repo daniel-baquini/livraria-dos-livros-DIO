@@ -21,4 +21,8 @@ export class DefaultHttpService {
         return this.httpClient.post<T>(path, model, this.defaultHeaders);
     }
 
+    put<T>(path: string, model: any): Observable<T> {
+        return this.httpClient.put<T>(path, model, this.defaultHeaders);
+    }
+
 }

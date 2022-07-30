@@ -19,7 +19,7 @@ export class LoginPageComponent {
     constructor(
         private activatedRoute: ActivatedRoute,
         formBuilder: FormBuilder,
-        private router: Router,
+        public router: Router,
         private userService: UserService,
         validator: LoginPageValidator
     ) {
@@ -27,6 +27,10 @@ export class LoginPageComponent {
             password: new FormControl("", validator.password),
             username: new FormControl("", validator.username)
         });
+    }
+
+    get successMessageQueryParam(): string | undefined {
+        return this.activatedRoute.snapshot.queryParams["success-message"];
     }
 
     private get returnToQueryParam(): string | undefined {

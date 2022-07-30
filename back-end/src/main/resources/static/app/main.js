@@ -317,6 +317,10 @@ class UserService {
     return this.crudBackendService.create(this.controllerPath, model);
   }
 
+  forgotPassword(forgotPassword) {
+    return this.defaultHttpService.put(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.backendUrl}/api/${this.controllerPath}/forgot-password`, forgotPassword);
+  }
+
   login(login) {
     var _this = this;
 
@@ -939,6 +943,9 @@ class DefaultHttpService {
     }
     post(path, model) {
         return this.httpClient.post(path, model, this.defaultHeaders);
+    }
+    put(path, model) {
+        return this.httpClient.put(path, model, this.defaultHeaders);
     }
 }
 DefaultHttpService.ɵfac = function DefaultHttpService_Factory(t) { return new (t || DefaultHttpService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
