@@ -1,10 +1,7 @@
-import UserPublicData from "./user-public-data.model"
+import AuthData from "./auth-data.model"
 
 interface LoginReturn {
-    data: {
-        token: string,
-        userPublicData: UserPublicData
-    }
+    data: AuthData
 }
 
 export default LoginReturn

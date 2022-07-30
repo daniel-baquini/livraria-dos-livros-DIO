@@ -8,7 +8,11 @@
             ></app-cart-item>
         </div>
         <div class="buttons-row">
-            <app-button [label]="'Fechar pedido'" [type]="'primary'"></app-button>
+            <app-button
+                [label]="'Fechar pedido'"
+                [routerLink]="'/cart/delivery-address'"
+                [type]="'primary'"
+            ></app-button>
         </div>
     </ng-container>
     <span class="empty-cart-label text-preset-450" *ngIf="this.cart.length === 0">Nenhum item no carrinho</span>

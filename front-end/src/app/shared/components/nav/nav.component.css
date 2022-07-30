@@ -40,13 +40,16 @@
     width: 1px;
 }
 
-.nav-links__link, .nav-links__username {
+.nav-links__link {
     color: var(--c-dark-60);
     cursor: pointer;
     transition: 250ms;
 }
 
-.nav-links__link:hover, .nav-links__username:hover {
+.nav-links__link:hover {
     color: var(--c-dark-100);
 }
 
+.nav-links__username {
+    color: var(--c-dark-60);
+}

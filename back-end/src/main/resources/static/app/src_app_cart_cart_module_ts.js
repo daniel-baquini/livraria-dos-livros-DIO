@@ -115,10 +115,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _cart_management_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cart-management.service */ 5971);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/components/button/button.component */ 42);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 4666);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/components/default-page/default-page.component */ 8014);
 /* harmony import */ var _cart_item_cart_item_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../cart-item/cart-item.component */ 3108);
+
 
 
 
@@ -145,7 +147,7 @@ function CartPageComponent_ng_container_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx_r0.cart);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("label", "Fechar pedido")("type", "primary");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("label", "Fechar pedido")("routerLink", "/cart/delivery-address")("type", "primary");
 } }
 function CartPageComponent_span_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 8);
@@ -161,11 +163,11 @@ class CartPageComponent {
     }
 }
 CartPageComponent.ɵfac = function CartPageComponent_Factory(t) { return new (t || CartPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_cart_management_service__WEBPACK_IMPORTED_MODULE_0__.CartManagementService)); };
-CartPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: CartPageComponent, selectors: [["app-cart-page"]], decls: 5, vars: 2, consts: [[1, "page-title", "text-preset-650"], [4, "ngIf"], ["class", "empty-cart-label text-preset-450", 4, "ngIf"], [1, "items"], [3, "cartItem", 4, "ngFor", "ngForOf"], [1, "buttons-row"], [3, "label", "type"], [3, "cartItem"], [1, "empty-cart-label", "text-preset-450"]], template: function CartPageComponent_Template(rf, ctx) { if (rf & 1) {
+CartPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: CartPageComponent, selectors: [["app-cart-page"]], decls: 5, vars: 2, consts: [[1, "page-title", "text-preset-650"], [4, "ngIf"], ["class", "empty-cart-label text-preset-450", 4, "ngIf"], [1, "items"], [3, "cartItem", 4, "ngFor", "ngForOf"], [1, "buttons-row"], [3, "label", "routerLink", "type"], [3, "cartItem"], [1, "empty-cart-label", "text-preset-450"]], template: function CartPageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "app-default-page")(1, "span", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Seu carrinho");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, CartPageComponent_ng_container_3_Template, 5, 3, "ng-container", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, CartPageComponent_ng_container_3_Template, 5, 4, "ng-container", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, CartPageComponent_span_4_Template, 2, 0, "span", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     } if (rf & 2) {
@@ -173,7 +175,7 @@ CartPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.cart.length > 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.cart.length === 0);
-    } }, dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__.ButtonComponent, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_2__.DefaultPageComponent, _cart_item_cart_item_component__WEBPACK_IMPORTED_MODULE_3__.CartItemComponent], styles: ["[_nghost-%COMP%] {\n    display: contents;\n}\n\n.page-title[_ngcontent-%COMP%] {\n    color: var(--c-dark-80);\n}\n\n.items[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    gap: 16px;\n    max-width: 800px;\n    width: 100%;\n}\n\n.items[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    width: 100%;\n}\n\n.buttons-row[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-end;\n    max-width: 800px;\n    width: 100%;\n}\n\n.empty-cart-label[_ngcontent-%COMP%] {\n    color: var(--c-dark-80);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhcnQtcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixTQUFTO0lBQ1QsZ0JBQWdCO0lBQ2hCLFdBQVc7QUFDZjs7QUFFQTtJQUNJLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSx1QkFBdUI7QUFDM0IiLCJmaWxlIjoiY2FydC1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgZGlzcGxheTogY29udGVudHM7XG59XG5cbi5wYWdlLXRpdGxlIHtcbiAgICBjb2xvcjogdmFyKC0tYy1kYXJrLTgwKTtcbn1cblxuLml0ZW1zIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgZ2FwOiAxNnB4O1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5pdGVtcyA+ICoge1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4uYnV0dG9ucy1yb3cge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5lbXB0eS1jYXJ0LWxhYmVsIHtcbiAgICBjb2xvcjogdmFyKC0tYy1kYXJrLTgwKTtcbn0iXX0= */"] });
+    } }, dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLink, _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__.ButtonComponent, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_2__.DefaultPageComponent, _cart_item_cart_item_component__WEBPACK_IMPORTED_MODULE_3__.CartItemComponent], styles: ["[_nghost-%COMP%] {\n    display: contents;\n}\n\n.page-title[_ngcontent-%COMP%] {\n    color: var(--c-dark-80);\n}\n\n.items[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: column;\n    gap: 16px;\n    max-width: 800px;\n    width: 100%;\n}\n\n.items[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n    width: 100%;\n}\n\n.buttons-row[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-end;\n    max-width: 800px;\n    width: 100%;\n}\n\n.empty-cart-label[_ngcontent-%COMP%] {\n    color: var(--c-dark-80);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhcnQtcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixTQUFTO0lBQ1QsZ0JBQWdCO0lBQ2hCLFdBQVc7QUFDZjs7QUFFQTtJQUNJLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSx1QkFBdUI7QUFDM0IiLCJmaWxlIjoiY2FydC1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgZGlzcGxheTogY29udGVudHM7XG59XG5cbi5wYWdlLXRpdGxlIHtcbiAgICBjb2xvcjogdmFyKC0tYy1kYXJrLTgwKTtcbn1cblxuLml0ZW1zIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgZ2FwOiAxNnB4O1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5pdGVtcyA+ICoge1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4uYnV0dG9ucy1yb3cge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5lbXB0eS1jYXJ0LWxhYmVsIHtcbiAgICBjb2xvcjogdmFyKC0tYy1kYXJrLTgwKTtcbn0iXX0= */"] });
 
 
 /***/ }),
@@ -242,9 +244,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DeliveryAddressPageComponent": () => (/* binding */ DeliveryAddressPageComponent)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/components/button/button.component */ 42);
 /* harmony import */ var _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/components/default-page/default-page.component */ 8014);
 /* harmony import */ var _shared_components_field_field_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/components/field/field.component */ 6885);
+
 
 
 
@@ -255,9 +259,9 @@ class DeliveryAddressPageComponent {
     }
 }
 DeliveryAddressPageComponent.ɵfac = function DeliveryAddressPageComponent_Factory(t) { return new (t || DeliveryAddressPageComponent)(); };
-DeliveryAddressPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: DeliveryAddressPageComponent, selectors: [["app-delivery-address-page"]], decls: 21, vars: 11, consts: [[1, "page-title", "text-preset-650"], [1, "grid", 3, "noValidate"], [1, "col-2"], [3, "label"], [1, "col-6"], [1, "col-4"], [1, "col-8"], [1, "buttons-row"], [3, "label", "type"]], template: function DeliveryAddressPageComponent_Template(rf, ctx) { if (rf & 1) {
+DeliveryAddressPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: DeliveryAddressPageComponent, selectors: [["app-delivery-address-page"]], decls: 21, vars: 12, consts: [[1, "page-title", "text-preset-650"], [1, "grid", 3, "noValidate"], [1, "col-2"], [3, "label"], [1, "col-6"], [1, "col-4"], [1, "col-8"], [1, "buttons-row"], [3, "label", "routerLink", "type"], [3, "label", "type"]], template: function DeliveryAddressPageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "app-default-page")(1, "span", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Seu carrinho");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Endere\u00E7o de entrega");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "form", 1)(4, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](5, "app-field", 3);
@@ -281,7 +285,7 @@ DeliveryAddressPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORT
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](17, "app-field", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](19, "app-button", 8)(20, "app-button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](19, "app-button", 8)(20, "app-button", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
@@ -299,10 +303,10 @@ DeliveryAddressPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORT
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("label", "Complemento (Opcional)");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("label", "Voltar")("type", "secondary");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("label", "Voltar")("routerLink", "/cart")("type", "secondary");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("label", "Forma de pagamento")("type", "primary");
-    } }, dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_0__.ButtonComponent, _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_1__.DefaultPageComponent, _shared_components_field_field_component__WEBPACK_IMPORTED_MODULE_2__.FieldComponent], styles: ["[_nghost-%COMP%] {\n    display: contents;\n}\n\n.page-title[_ngcontent-%COMP%] {\n    color: var(--c-dark-80);\n}\n\nform[_ngcontent-%COMP%] {\n    flex: 1;\n    max-width: 800px;\n    width: 100%;\n}\n\n.buttons-row[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    justify-content: flex-end;\n    max-width: 800px;\n    width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRlbGl2ZXJ5LWFkZHJlc3MtcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksT0FBTztJQUNQLGdCQUFnQjtJQUNoQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLFFBQVE7SUFDUix5QkFBeUI7SUFDekIsZ0JBQWdCO0lBQ2hCLFdBQVc7QUFDZiIsImZpbGUiOiJkZWxpdmVyeS1hZGRyZXNzLXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgICBkaXNwbGF5OiBjb250ZW50cztcbn1cblxuLnBhZ2UtdGl0bGUge1xuICAgIGNvbG9yOiB2YXIoLS1jLWRhcmstODApO1xufVxuXG5mb3JtIHtcbiAgICBmbGV4OiAxO1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5idXR0b25zLXJvdyB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIGdhcDogOHB4O1xuICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gICAgbWF4LXdpZHRoOiA4MDBweDtcbiAgICB3aWR0aDogMTAwJTtcbn0iXX0= */"] });
+    } }, dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterLink, _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_0__.ButtonComponent, _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_1__.DefaultPageComponent, _shared_components_field_field_component__WEBPACK_IMPORTED_MODULE_2__.FieldComponent], styles: ["[_nghost-%COMP%] {\n    display: contents;\n}\n\n.page-title[_ngcontent-%COMP%] {\n    color: var(--c-dark-80);\n}\n\nform[_ngcontent-%COMP%] {\n    flex: 1;\n    max-width: 800px;\n    width: 100%;\n}\n\n.buttons-row[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    justify-content: flex-end;\n    max-width: 800px;\n    width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRlbGl2ZXJ5LWFkZHJlc3MtcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksT0FBTztJQUNQLGdCQUFnQjtJQUNoQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLFFBQVE7SUFDUix5QkFBeUI7SUFDekIsZ0JBQWdCO0lBQ2hCLFdBQVc7QUFDZiIsImZpbGUiOiJkZWxpdmVyeS1hZGRyZXNzLXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgICBkaXNwbGF5OiBjb250ZW50cztcbn1cblxuLnBhZ2UtdGl0bGUge1xuICAgIGNvbG9yOiB2YXIoLS1jLWRhcmstODApO1xufVxuXG5mb3JtIHtcbiAgICBmbGV4OiAxO1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5idXR0b25zLXJvdyB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgIGdhcDogOHB4O1xuICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gICAgbWF4LXdpZHRoOiA4MDBweDtcbiAgICB3aWR0aDogMTAwJTtcbn0iXX0= */"] });
 
 
 /***/ }),

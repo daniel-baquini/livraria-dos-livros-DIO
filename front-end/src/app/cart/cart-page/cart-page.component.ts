@@ -9,7 +9,9 @@ import CartItem from '../cart-item/cart-item.model';
 })
 export class CartPageComponent {
     
-    constructor(private cartManagementService: CartManagementService) { }
+    constructor(
+        private cartManagementService: CartManagementService
+    ) { }
     
     get cart(): CartItem[] {
         return this.cartManagementService.cart;
