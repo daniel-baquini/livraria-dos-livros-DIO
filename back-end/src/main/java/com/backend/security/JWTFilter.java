@@ -16,7 +16,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.backend.config.JWTConfiguration;
-import com.backend.config.SecurityConfiguration;
 import com.backend.model.JWTObject;
 
 import io.jsonwebtoken.ExpiredJwtException;

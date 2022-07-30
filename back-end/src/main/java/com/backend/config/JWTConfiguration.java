@@ -4,12 +4,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "security.config")
 public class JWTConfiguration {
 
-    public static Long EXPIRATION;
-    public static String KEY;
-    public static String PREFIX;
+    // Hard coded, because, for some reason, these properties are not being readed on "application.properties"
+    public static Long EXPIRATION = 3600000L;
+    public static String KEY = "LibraryKEY";
+    public static String PREFIX = "Bearer";
 
     public static void setEXPIRATION(Long eXPIRATION) {
         EXPIRATION = eXPIRATION;

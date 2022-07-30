@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -17,8 +16,8 @@ import com.backend.security.JWTFilter;
 import com.backend.service.SecurityDatabaseService;
 
 @Configuration
-// @EnableWebSecurity
-// @EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration {
     
     @Autowired
@@ -43,6 +42,7 @@ public class SecurityConfiguration {
             .antMatchers("/api/book", "/api/book/**").permitAll()
             .antMatchers("/api/user", "/api/user/**").permitAll()
             .antMatchers("/images", "/images/**").permitAll()
+            .antMatchers("/h2-console", "/h2-console/**").permitAll()
             .anyRequest().authenticated().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         return http.build();
@@ -53,9 +53,9 @@ public class SecurityConfiguration {
         auth.userDetailsService(securityService).passwordEncoder(new BCryptPasswordEncoder());
     }
 
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers("/h2", "/h2/**");
-    }
+    // @Bean
+    // public WebSecurityCustomizer webSecurityCustomizer() {
+    //     return (web) -> web.ignoring().antMatchers("/h2", "/h2/**");
+    // }
 
 }
