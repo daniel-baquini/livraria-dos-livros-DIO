@@ -21,6 +21,12 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+    @GetMapping("/filter/{condition}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Book> filter(@PathVariable(value = "condition") String condition) {
+        return this.bookService.filter(condition);
+    }
+
     @GetMapping("/get/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Book> get(@PathVariable(value = "id") Integer id) {

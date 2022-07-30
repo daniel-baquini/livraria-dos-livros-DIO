@@ -18,6 +18,10 @@ public class BookService {
 
     private final int quantityPerPage = 6;
 
+    public List<Book> filter(String condition) {
+        return this.bookRepository.filter(condition);
+    }
+
     public Optional<Book> findById(Integer id) {
         return this.bookRepository.findById(id);
     }
