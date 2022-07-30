@@ -15,7 +15,8 @@ import io.jsonwebtoken.UnsupportedJwtException;
 
 public class JWTCreator {
     
-    public static final String HEADER_AUTHORIZATION = "Authorization";
+    // public static final String HEADER_AUTHORIZATION = "Authorization";
+    public static final String HEADER_AUTHORIZATION = "x-api-key";    
     public static final String ROLES_AUTHORITIES = "authorities";
 
     public static String create(String prefix, String key, JWTObject jwtObject) {

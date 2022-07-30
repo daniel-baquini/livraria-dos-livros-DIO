@@ -1,9 +1,9 @@
+import Book from './book.model';
+import { CrudBackendService } from '../crud-backend.service';
+import { DefaultHttpService } from '../../services/default-http/default-http.service';
+import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { DefaultHttpService } from '../../services/default-http/default-http.service';
-import { CrudBackendService } from '../crud-backend.service';
-import Book from './book.model';
 
 @Injectable({
     providedIn: 'root'

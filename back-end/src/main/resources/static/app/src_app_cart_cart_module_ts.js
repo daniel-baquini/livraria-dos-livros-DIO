@@ -405,13 +405,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PaymentMethodPageComponent": () => (/* binding */ PaymentMethodPageComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _cart_management_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cart-management.service */ 5971);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 124);
-/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/components/button/button.component */ 42);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 4666);
-/* harmony import */ var _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/components/default-page/default-page.component */ 8014);
-/* harmony import */ var _shared_components_modal_modal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/components/modal/modal.component */ 312);
+/* harmony import */ var src_app_shared_backend_cart_cart_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/shared/backend/cart/cart.service */ 914);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _shared_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/components/alert/alert.component */ 8332);
+/* harmony import */ var _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/components/button/button.component */ 42);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 4666);
+/* harmony import */ var _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/components/default-page/default-page.component */ 8014);
+/* harmony import */ var _shared_components_modal_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/components/modal/modal.component */ 312);
 
 
 
@@ -419,70 +421,133 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function PaymentMethodPageComponent_app_modal_15_Template(rf, ctx) { if (rf & 1) {
-    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "app-modal", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("closeButtonClick", function PaymentMethodPageComponent_app_modal_15_Template_app_modal_closeButtonClick_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r2); const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.goToHomePage()); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+
+function PaymentMethodPageComponent_app_alert_3_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "app-alert", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("close", function PaymentMethodPageComponent_app_alert_3_Template_app_alert_close_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r2.showErrorMessage = false); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("closeButtonLabel", "Ir para p\u00E1gina inicial")("textContent", "Este aplicativo foi criado apenas como demonstra\u00E7\u00E3o de como eu desenvolvo uma aplica\u00E7\u00E3o utilizando o Angular no front-end e Java no back-end. O objetivo n\u00E3o \u00E9 fazer uma compra real, apenas demonstrar funcionalidades no aplicativo.")("title", "Fim da demo");
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("canClose", true)("message", ctx_r0.errorMessage)("type", "error");
+} }
+function PaymentMethodPageComponent_app_modal_16_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "app-modal", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("closeButtonClick", function PaymentMethodPageComponent_app_modal_16_Template_app_modal_closeButtonClick_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r4.goToHomePage()); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("closeButtonLabel", "Ir para p\u00E1gina inicial")("textContent", "Este aplicativo foi criado apenas como demonstra\u00E7\u00E3o de como eu desenvolvo uma aplica\u00E7\u00E3o utilizando o Angular no front-end e Java no back-end. O objetivo n\u00E3o \u00E9 fazer uma compra real, apenas demonstrar funcionalidades no aplicativo.")("title", "Fim da demo");
 } }
 const _c0 = function (a0) { return { "payment-options__option--active": a0 }; };
 class PaymentMethodPageComponent {
-    constructor(cartManagementService, router) {
+    constructor(cartManagementService, cartService, router) {
         this.cartManagementService = cartManagementService;
+        this.cartService = cartService;
         this.router = router;
+        this.errorMessage = "";
         this.paymentMethod = "";
         this.showEndOfDemoModal = false;
+        this.showErrorMessage = false;
+    }
+    buy() {
+        this.cartService.buy().subscribe({
+            error: (err) => {
+                console.log(err);
+                this.errorMessage = err.error.data;
+                this.showErrorMessage = true;
+            },
+            next: value => {
+                this.showEndOfDemoModal = true;
+            }
+        });
     }
     goToHomePage() {
         this.cartManagementService.clear();
         this.router.navigateByUrl("/");
     }
 }
-PaymentMethodPageComponent.ɵfac = function PaymentMethodPageComponent_Factory(t) { return new (t || PaymentMethodPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_cart_management_service__WEBPACK_IMPORTED_MODULE_0__.CartManagementService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router)); };
-PaymentMethodPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: PaymentMethodPageComponent, selectors: [["app-payment-method-page"]], decls: 16, vars: 18, consts: [[1, "page-title", "text-preset-650"], [1, "payment-options"], [1, "payment-options__option", "text-preset-450", 3, "ngClass", "click"], [1, "buttons-row"], [3, "label", "type"], [3, "disabled", "label", "type", "btnClick"], [3, "closeButtonLabel", "textContent", "title", "closeButtonClick", 4, "ngIf"], [3, "closeButtonLabel", "textContent", "title", "closeButtonClick"]], template: function PaymentMethodPageComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "app-default-page")(1, "span", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Forma de pagamento");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 1)(4, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_4_listener() { return ctx.paymentMethod = "Boleto"; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5, "Boleto");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_6_listener() { return ctx.paymentMethod = "Cart\u00E3o de cr\u00E9dito"; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7, "Cart\u00E3o de cr\u00E9dito");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_8_listener() { return ctx.paymentMethod = "Paypal"; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](9, "Paypal");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_10_listener() { return ctx.paymentMethod = "Pix"; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11, "Pix");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](13, "app-button", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "app-button", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("btnClick", function PaymentMethodPageComponent_Template_app_button_btnClick_14_listener() { return ctx.showEndOfDemoModal = true; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](15, PaymentMethodPageComponent_app_modal_15_Template, 1, 3, "app-modal", 6);
+PaymentMethodPageComponent.ɵfac = function PaymentMethodPageComponent_Factory(t) { return new (t || PaymentMethodPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_cart_management_service__WEBPACK_IMPORTED_MODULE_0__.CartManagementService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_backend_cart_cart_service__WEBPACK_IMPORTED_MODULE_1__.CartService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router)); };
+PaymentMethodPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: PaymentMethodPageComponent, selectors: [["app-payment-method-page"]], decls: 17, vars: 20, consts: [[1, "page-title", "text-preset-650"], [3, "canClose", "message", "type", "close", 4, "ngIf"], [1, "payment-options"], [1, "payment-options__option", "text-preset-450", 3, "ngClass", "click"], [1, "buttons-row"], [3, "routerLink", "label", "type"], [3, "disabled", "label", "type", "btnClick"], [3, "closeButtonLabel", "textContent", "title", "closeButtonClick", 4, "ngIf"], [3, "canClose", "message", "type", "close"], [3, "closeButtonLabel", "textContent", "title", "closeButtonClick"]], template: function PaymentMethodPageComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "app-default-page")(1, "span", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Forma de pagamento");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](3, PaymentMethodPageComponent_app_alert_3_Template, 1, 3, "app-alert", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "div", 2)(5, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_5_listener() { return ctx.paymentMethod = "Boleto"; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](6, "Boleto");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_7_listener() { return ctx.paymentMethod = "Cart\u00E3o de cr\u00E9dito"; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](8, "Cart\u00E3o de cr\u00E9dito");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_9_listener() { return ctx.paymentMethod = "Paypal"; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](10, "Paypal");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function PaymentMethodPageComponent_Template_div_click_11_listener() { return ctx.paymentMethod = "Pix"; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](12, "Pix");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](14, "app-button", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "app-button", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("btnClick", function PaymentMethodPageComponent_Template_app_button_btnClick_15_listener() { return ctx.buy(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](16, PaymentMethodPageComponent_app_modal_16_Template, 1, 3, "app-modal", 7);
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](10, _c0, ctx.paymentMethod === "Boleto"));
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](12, _c0, ctx.paymentMethod === "Cart\u00E3o de cr\u00E9dito"));
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](14, _c0, ctx.paymentMethod === "Paypal"));
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](16, _c0, ctx.paymentMethod === "Pix"));
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("label", "Voltar")("type", "secondary");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx.paymentMethod === "")("label", "Finalizar pedido")("type", "primary");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.showEndOfDemoModal);
-    } }, dependencies: [_shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_1__.ButtonComponent, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_2__.DefaultPageComponent, _shared_components_modal_modal_component__WEBPACK_IMPORTED_MODULE_3__.ModalComponent], styles: ["[_nghost-%COMP%] {\n    display: contents;\n}\n\napp-alert[_ngcontent-%COMP%], .payment-options[_ngcontent-%COMP%], .buttons-row[_ngcontent-%COMP%] {\n    max-width: 800px;\n    width: 100%;\n}\n\n.payment-options[_ngcontent-%COMP%] {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    gap: 16px;\n}\n\n.payment-options__option[_ngcontent-%COMP%] {\n    background-color: var(--c-white-30);\n    border-radius: 4px;\n    color: var(--c-dark-80);\n    cursor: pointer;\n    padding: 20px 12px;\n    width: 100%;\n}\n\n.payment-options__option--active[_ngcontent-%COMP%] {\n    background-color: transparent;\n    border: 1px solid var(--c-primary-60);\n}\n\n.buttons-row[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    justify-content: flex-end;\n    max-width: 800px;\n    width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBheW1lbnQtbWV0aG9kLXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsT0FBTztJQUNQLHNCQUFzQjtJQUN0QixTQUFTO0FBQ2I7O0FBRUE7SUFDSSxtQ0FBbUM7SUFDbkMsa0JBQWtCO0lBQ2xCLHVCQUF1QjtJQUN2QixlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLFdBQVc7QUFDZjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixxQ0FBcUM7QUFDekM7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLFFBQVE7SUFDUix5QkFBeUI7SUFDekIsZ0JBQWdCO0lBQ2hCLFdBQVc7QUFDZiIsImZpbGUiOiJwYXltZW50LW1ldGhvZC1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgZGlzcGxheTogY29udGVudHM7XG59XG5cbmFwcC1hbGVydCwgLnBheW1lbnQtb3B0aW9ucywgLmJ1dHRvbnMtcm93IHtcbiAgICBtYXgtd2lkdGg6IDgwMHB4O1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4ucGF5bWVudC1vcHRpb25zIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXg6IDE7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBnYXA6IDE2cHg7XG59XG5cbi5wYXltZW50LW9wdGlvbnNfX29wdGlvbiB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYy13aGl0ZS0zMCk7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgIGNvbG9yOiB2YXIoLS1jLWRhcmstODApO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwYWRkaW5nOiAyMHB4IDEycHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5wYXltZW50LW9wdGlvbnNfX29wdGlvbi0tYWN0aXZlIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1jLXByaW1hcnktNjApO1xufVxuXG4uYnV0dG9ucy1yb3cge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBnYXA6IDhweDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59Il19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.showErrorMessage);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](12, _c0, ctx.paymentMethod === "Boleto"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](14, _c0, ctx.paymentMethod === "Cart\u00E3o de cr\u00E9dito"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](16, _c0, ctx.paymentMethod === "Paypal"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](18, _c0, ctx.paymentMethod === "Pix"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", "/cart/delivery-address")("label", "Voltar")("type", "secondary");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx.paymentMethod === "")("label", "Finalizar pedido")("type", "primary");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.showEndOfDemoModal);
+    } }, dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterLink, _shared_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_2__.AlertComponent, _shared_components_button_button_component__WEBPACK_IMPORTED_MODULE_3__.ButtonComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _shared_components_default_page_default_page_component__WEBPACK_IMPORTED_MODULE_4__.DefaultPageComponent, _shared_components_modal_modal_component__WEBPACK_IMPORTED_MODULE_5__.ModalComponent], styles: ["[_nghost-%COMP%] {\n    display: contents;\n}\n\napp-alert[_ngcontent-%COMP%], .payment-options[_ngcontent-%COMP%], .buttons-row[_ngcontent-%COMP%] {\n    max-width: 800px;\n    width: 100%;\n}\n\n.payment-options[_ngcontent-%COMP%] {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    gap: 16px;\n}\n\n.payment-options__option[_ngcontent-%COMP%] {\n    background-color: var(--c-white-30);\n    border-radius: 4px;\n    color: var(--c-dark-80);\n    cursor: pointer;\n    padding: 20px 12px;\n    width: 100%;\n}\n\n.payment-options__option--active[_ngcontent-%COMP%] {\n    background-color: transparent;\n    border: 1px solid var(--c-primary-60);\n}\n\n.buttons-row[_ngcontent-%COMP%] {\n    display: flex;\n    flex-direction: row;\n    gap: 8px;\n    justify-content: flex-end;\n    max-width: 800px;\n    width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBheW1lbnQtbWV0aG9kLXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsT0FBTztJQUNQLHNCQUFzQjtJQUN0QixTQUFTO0FBQ2I7O0FBRUE7SUFDSSxtQ0FBbUM7SUFDbkMsa0JBQWtCO0lBQ2xCLHVCQUF1QjtJQUN2QixlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLFdBQVc7QUFDZjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixxQ0FBcUM7QUFDekM7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLFFBQVE7SUFDUix5QkFBeUI7SUFDekIsZ0JBQWdCO0lBQ2hCLFdBQVc7QUFDZiIsImZpbGUiOiJwYXltZW50LW1ldGhvZC1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgZGlzcGxheTogY29udGVudHM7XG59XG5cbmFwcC1hbGVydCwgLnBheW1lbnQtb3B0aW9ucywgLmJ1dHRvbnMtcm93IHtcbiAgICBtYXgtd2lkdGg6IDgwMHB4O1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4ucGF5bWVudC1vcHRpb25zIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXg6IDE7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBnYXA6IDE2cHg7XG59XG5cbi5wYXltZW50LW9wdGlvbnNfX29wdGlvbiB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYy13aGl0ZS0zMCk7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgIGNvbG9yOiB2YXIoLS1jLWRhcmstODApO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwYWRkaW5nOiAyMHB4IDEycHg7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5wYXltZW50LW9wdGlvbnNfX29wdGlvbi0tYWN0aXZlIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1jLXByaW1hcnktNjApO1xufVxuXG4uYnV0dG9ucy1yb3cge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBnYXA6IDhweDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgd2lkdGg6IDEwMCU7XG59Il19 */"] });
+
+
+/***/ }),
+
+/***/ 914:
+/*!*****************************************************!*\
+  !*** ./src/app/shared/backend/cart/cart.service.ts ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CartService": () => (/* binding */ CartService)
+/* harmony export */ });
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var src_app_cart_cart_management_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/cart/cart-management.service */ 5971);
+/* harmony import */ var _services_default_http_default_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/default-http/default-http.service */ 7817);
+
+
+
+
+class CartService {
+    constructor(cartManagementService, defaultHttpService) {
+        this.cartManagementService = cartManagementService;
+        this.defaultHttpService = defaultHttpService;
+        this.controllerPath = "cart";
+    }
+    buy() {
+        return this.defaultHttpService.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.backendUrl}/api/${this.controllerPath}/buy`, this.cartManagementService.cart);
+    }
+}
+CartService.ɵfac = function CartService_Factory(t) { return new (t || CartService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](src_app_cart_cart_management_service__WEBPACK_IMPORTED_MODULE_1__.CartManagementService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_services_default_http_default_http_service__WEBPACK_IMPORTED_MODULE_2__.DefaultHttpService)); };
+CartService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: CartService, factory: CartService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),

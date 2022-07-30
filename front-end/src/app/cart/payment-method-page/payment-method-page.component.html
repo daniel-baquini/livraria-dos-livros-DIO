@@ -1,5 +1,12 @@
 <app-default-page>
     <span class="page-title text-preset-650">Forma de pagamento</span>
+    <app-alert
+        [canClose]="true"
+        (close)="this.showErrorMessage = false"
+        [message]="this.errorMessage"
+        *ngIf="this.showErrorMessage"
+        [type]="'error'"
+    ></app-alert>
     <div class="payment-options">
         <div
             class="payment-options__option text-preset-450"
@@ -23,9 +30,13 @@
         >Pix</div>
     </div>
     <div class="buttons-row">
-        <app-button [label]="'Voltar'" [type]="'secondary'"></app-button>
         <app-button
-            (btnClick)="this.showEndOfDemoModal = true"
+            [routerLink]="'/cart/delivery-address'"
+            [label]="'Voltar'"
+            [type]="'secondary'"
+        ></app-button>
+        <app-button
+            (btnClick)="this.buy()"
             [disabled]="this.paymentMethod === ''"
             [label]="'Finalizar pedido'"
             [type]="'primary'"

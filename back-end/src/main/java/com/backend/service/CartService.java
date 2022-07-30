@@ -33,7 +33,7 @@ public class CartService {
                     "O livro de título \"%s\" possui apenas %d unidades em estoque (a tentativa de compra foi de %d unidades)",
                     book.getTitle(),
                     book.getQuantity(),
-                    cartItem.getBook().getQuantity()
+                    cartItem.getQuantity()
                 ));
             }
 
