@@ -2,21 +2,20 @@
     <div class="search">
         <span class="text-preset-650 welcome-message">Boas-vindas! Faça a busca pelo nome do livro ou autor(a)</span>
         <div class="search-group">
-            <app-field></app-field>
-            <app-button [type]="'search'"></app-button>
+            <app-field (onFieldInput)="this.onSearch($event)"></app-field>
         </div>
     </div>
     <div class="books">
         <app-book-preview
             [book]="book"
-            *ngFor="let book of this.books"
+            *ngFor="let book of (this.filteredBooks ?? this.books)"
             [routerLink]="'/book/' + book.id"
         ></app-book-preview>
     </div>
     <span
         class="load-more text-preset-460"
         (click)="this.loadMore()"
-        *ngIf="this.canLoadMore"
+        *ngIf="this.canLoadMore && this.filteredBooks === undefined"
     >Carregar mais</span>
 </app-default-page>
 <app-modal

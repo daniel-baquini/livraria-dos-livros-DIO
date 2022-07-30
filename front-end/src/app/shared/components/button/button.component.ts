@@ -8,7 +8,7 @@ import { Component, EventEmitter, HostListener, Input, Output } from '@angular/c
 export class ButtonComponent {
     @Input() disabled: boolean = false;
     @Input() label: string = "";
-    @Input() type: "primary" | "search" | "secondary" = "primary";
+    @Input() type: "primary" | "secondary" = "primary";
 
     @Output() btnClick = new EventEmitter();
 

@@ -16,6 +16,12 @@ export class BookService {
         private defaultHttpService: DefaultHttpService
     ) { }
 
+    filter(conditon: string): Observable<Book[] | undefined> {
+        return this.defaultHttpService.get<Book[] | undefined>(
+            `${environment.backendUrl}/api/${this.controllerPath}/filter/${conditon}`,
+        )
+    }
+
     read(id: any): Observable<Book | undefined> {
         return this.crudBackendService.get<Book>(this.controllerPath, id);
     }

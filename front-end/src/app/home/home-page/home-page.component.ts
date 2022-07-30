@@ -1,7 +1,8 @@
 import Book from 'src/app/shared/backend/book/book.model';
 import { BookService } from 'src/app/shared/backend/book/book.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserPreferencesService } from 'src/app/shared/services/user-preferences/user-preferences.service';
+import { debounceTime, distinctUntilChanged, filter, of, switchMap } from 'rxjs';
 
 @Component({
     selector: 'app-home-page',
@@ -12,6 +13,7 @@ export class HomePageComponent {
     
     books: Book[] = [];
     canLoadMore: boolean = false;
+    filteredBooks: Book[] | undefined;
     private readonly _pageSize: number = 6;
 
     constructor(
@@ -36,6 +38,23 @@ export class HomePageComponent {
                 this.canLoadMore = x.length === 6;
             }
         });
+    }
+
+    onSearch(event: Event): void {
+        const value: string = (event.target as HTMLInputElement).value
+
+        if(value.length < 2) {
+            this.filteredBooks = undefined;
+            return;
+        }
+
+        of(value).pipe(
+            debounceTime(250),
+            distinctUntilChanged(),
+            switchMap(searchTerm => this.bookService.filter(searchTerm))
+        ).subscribe(x => {
+            this.filteredBooks = x;
+        })
     }
 
 }

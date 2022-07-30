@@ -25,6 +25,9 @@ class BookService {
         this.defaultHttpService = defaultHttpService;
         this.controllerPath = "book";
     }
+    filter(conditon) {
+        return this.defaultHttpService.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.backendUrl}/api/${this.controllerPath}/filter/${conditon}`);
+    }
     read(id) {
         return this.crudBackendService.get(this.controllerPath, id);
     }

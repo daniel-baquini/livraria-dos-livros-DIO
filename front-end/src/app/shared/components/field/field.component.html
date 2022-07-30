@@ -8,7 +8,7 @@
         <input
             class="text-preset-450"
             (focus)="this.onTouchedFn()"
-            (input)="this.onChangeFn($event)"
+            (input)="this.onChangeFn($event); this.onFieldInput.emit($event)"
             [type]="this._type"
         >
         <span

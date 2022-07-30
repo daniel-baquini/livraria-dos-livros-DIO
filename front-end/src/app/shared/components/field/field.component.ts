@@ -1,5 +1,5 @@
 import BaseField from '../../utils/BaseField.model';
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import HTMLInputType from '../../utils/html-input-type.type';
 
@@ -19,6 +19,8 @@ export class FieldComponent extends BaseField implements OnInit {
 
     @Input() label: string | undefined;
     @Input() type: HTMLInputType = "text"
+
+    @Output() onFieldInput = new EventEmitter<Event>();
 
     _type: HTMLInputType = this.type;
 
