@@ -1,20 +1,19 @@
 import { environment } from 'src/environments/environment';
-import { firstValueFrom, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { DefaultHttpService } from '../services/default-http/default-http.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CrudBackendService {
     
-    constructor(private httpClient: HttpClient) { }
+    constructor(private defaultHttpService: DefaultHttpService) { }
 
     create<T>(controllerPath: string, model: T): Observable<string> {
-        return this.httpClient.post<string>(
+        return this.defaultHttpService.post(
             `${environment.backendUrl}/api/${controllerPath}/create`,
-            model,
-            { headers: { "Content-type": "application/json" } }
+            model
         );
     }
     
@@ -22,17 +21,15 @@ export class CrudBackendService {
         throw new Error('Method not implemented.');
     }
     
-    read<T>(controllerPath: string, id: any): Observable<T | undefined> {
-        return this.httpClient.get<T | undefined>(
-            `${environment.backendUrl}/api/${controllerPath}/get/${id}`,
-            { headers: { "Content-type": "application/json" } }
-        )
+    get<T>(controllerPath: string, id: any): Observable<T | undefined> {
+        return this.defaultHttpService.get(
+            `${environment.backendUrl}/api/${controllerPath}/get/${id}`
+        );
     }
 
-    readAll<T>(controllerPath: string): Observable<T[]> {
-        return this.httpClient.get<T[]>(
-            `${environment.backendUrl}/api/${controllerPath}/getAll`,
-            { headers: { "Content-type": "application/json" } }
+    getAll<T>(controllerPath: string): Observable<T[]> {
+        return this.defaultHttpService.get<T[]>(
+            `${environment.backendUrl}/api/${controllerPath}/getAll`
         )
     }
 

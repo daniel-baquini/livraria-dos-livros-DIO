@@ -7,5 +7,12 @@
         </div>
     </div>
     <div class="vertical-divider"></div>
-    <div class="nav-links__link" [routerLink]="'/user'">Entrar</div>
+    <span class="nav-links__link text-preset-450" *ngIf="!this.userService.isAuthenticated" [routerLink]="'/user'">Entrar</span>
+    <ng-container *ngIf="this.userService.isAuthenticated">
+        <span class="nav-links__username text-preset-450">
+            {{"Olá, " + this.userService.userPublicData?.name}}
+        </span>
+        <div class="vertical-divider"></div>
+        <span class="nav-links__link text-preset-450">Sair</span>
+    </ng-container>
 </div>

@@ -26,7 +26,6 @@ export class CreateAccountPageComponent {
     }
 
     createAccount(): void {
-        console.log(JSON.stringify(this.form.value));
         this.userService.create(this.form.value).subscribe(x => {
             console.log(x);
         });

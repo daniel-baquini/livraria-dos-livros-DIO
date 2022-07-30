@@ -3,5 +3,9 @@
     <span class="icon-check-full message-icon"></span>
     <span class="icon-warning message-icon"></span>
     <span class="message text-preset-460">{{this.message}}</span>
-    <span class="close-icon icon-close" *ngIf="this.canClose"></span>
+    <span
+        class="close-icon icon-close"
+        (click)="this.close.emit()"
+        *ngIf="this.canClose"
+    ></span>
 </div>

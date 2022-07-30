@@ -45,6 +45,10 @@
     font-size: 32px;
 }
 
+.close-icon {
+    cursor: pointer;
+}
+
 .message {
     color: var(--c-white-10);
     flex: 1;

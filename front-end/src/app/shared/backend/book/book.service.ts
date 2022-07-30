@@ -13,11 +13,11 @@ export class BookService {
     constructor(private crudBackendService: CrudBackendService) { }
 
     read(id: any): Observable<Book | undefined> {
-        return this.crudBackendService.read<Book>(this.controllerPath, id);
+        return this.crudBackendService.get<Book>(this.controllerPath, id);
     }
 
     readAll(): Observable<Book[]> {
-        return this.crudBackendService.readAll<Book>(this.controllerPath);
+        return this.crudBackendService.getAll<Book>(this.controllerPath);
     }
 
 }

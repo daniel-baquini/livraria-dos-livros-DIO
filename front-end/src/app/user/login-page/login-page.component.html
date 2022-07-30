@@ -1,9 +1,29 @@
 <app-logo></app-logo>
-<form [noValidate]>
-    <app-field [label]="'Email'"></app-field>
-    <app-field [label]="'Senha'"></app-field>
+<app-alert
+    [canClose]="true"
+    (close)="this.showAlert = false"
+    [message]="this.errorMessage"
+    *ngIf="this.showAlert"
+    [type]="'error'"
+></app-alert>
+<form [formGroup]="this.form" [noValidate]>
+    <app-field
+        [abstractControl]="this.form.controls['username']"
+        formControlName="username"
+        [label]="'Email'"
+    ></app-field>
+    <app-field
+        [abstractControl]="this.form.controls['password']"
+        formControlName="password"
+        [label]="'Senha'"
+        [type]="'password'"
+    ></app-field>
     <div class="form-buttons">
-        <app-button [label]="'Entrar'"></app-button>
+        <app-button
+            (click)="this.login()"
+            [disabled]="this.form.invalid"
+            [label]="'Entrar'"
+        ></app-button>
         <div class="form-buttons__forgot-password" [routerLink]="'/user/forgot-password'">Esqueceu sua senha?</div>
     </div>
 </form>
