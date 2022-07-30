@@ -50,10 +50,3 @@
 .book-data__price {
     color: var(--c-dark-80);
 }
-
-.book-data__rate {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-}

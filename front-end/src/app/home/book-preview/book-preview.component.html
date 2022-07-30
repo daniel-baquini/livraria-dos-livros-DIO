@@ -8,14 +8,5 @@
             <span class="book-data__author text-preset-350">{{this.book.author}}</span>
         </div>
         <span class="book-data__price text-preset-430">R$ {{this.priceInReal}}<span class="text-preset-230">,{{this.priceInCentavos}}</span></span>
-        <div class="book-data__rate">
-            <div class="rate__stars">
-                <span 
-                    [ngClass]="{ 'icon-full-star': this.book.rating >= i, 'icon-empty-star': this.book.rating < i}"
-                    *ngFor="let i of [1, 2, 3, 4, 5]"
-                class="icon-full-star"></span>
-            </div>
-            <span class="rate__quantity">({{this.book.reviewsQuantity}})</span>
-        </div>
     </div>
 </ng-container>

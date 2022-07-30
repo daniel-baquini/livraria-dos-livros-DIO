@@ -5,8 +5,6 @@ interface Book {
     id: number;
     price: number;
     quantity: number;
-    rating: number;
-    reviewsQuantity: number;
     title: string;
 }
 

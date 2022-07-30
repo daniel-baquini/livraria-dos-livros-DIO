@@ -51,13 +51,6 @@
     color: var(--c-dark-60);
 }
 
-.book-data__rate {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-}
-
 .book-data__price-and-installment {
     display: flex;
     flex-direction: column;

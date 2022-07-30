@@ -23,20 +23,16 @@ public class Book {
 
     private Double price;
     private Integer quantity;
-    private Double rating;
-    private Integer reviewsQuantity;
     private String title;
 
     public Book() { }
 
-    public Book(String author, String bookCoverUrl, String description, Double price, Integer quantity, Double rating, Integer reviewsQuantity, String title) {
+    public Book(String author, String bookCoverUrl, String description, Double price, Integer quantity, String title) {
         this.author = author;
         this.bookCoverUrl = bookCoverUrl;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
-        this.rating = rating;
-        this.reviewsQuantity = reviewsQuantity;
         this.title = title;
     }
 
@@ -86,22 +82,6 @@ public class Book {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
-    }
-
-    public Integer getReviewsQuantity() {
-        return reviewsQuantity;
-    }
-
-    public void setReviewsQuantity(Integer reviewsQuantity) {
-        this.reviewsQuantity = reviewsQuantity;
     }
 
     public String getTitle() {
