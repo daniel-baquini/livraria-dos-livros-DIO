@@ -37,7 +37,6 @@ public class UserController {
     // BCrypt, check "SecurityConfiguration" file.
     private PasswordEncoder encoder;
 
-
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @PostMapping("/create")
